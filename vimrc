@@ -1,17 +1,35 @@
-" Leader
-let mapleader = " "
+let mapleader = ","
+set shell=/bin/bash
 
-set backspace=2   " Backspace deletes like most programs in insert mode
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
 set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+" http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set noswapfile
+set modelines=0
 set history=50
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
+set backspace=indent,eol,start
+set hlsearch
+set undofile
+set scrolloff=3
+set visualbell "turn off beeps
+set cursorline
+set colorcolumn=85
+set wildmenu
+set wildmode=list:full
+
+" Save on losing focus
+au FocusLost * :wa
+
+
+"search for lowercase string will be case-insensitive
+"if one or more characters is uppercase the search will be case-sensitive
+set ignorecase
+set smartcase
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -19,48 +37,58 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+"clear the search buffer when hitting return or esc
+augroup no_highlight
+  autocmd TermResponse * nnoremap <esc> :noh<return><esc>
+augroup END
+
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
-filetype plugin indent on
+filetype plugin indent on " Enable filetype-specific indenting and plugins
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CUSTOM AUTOCMDS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 augroup vimrcEx
+  " Clear all autocmds in the group
   autocmd!
-
-  " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it for commit messages, when the position is invalid, or when
-  " inside an event handler (happens when dropping a file on gvim).
+  " Jump to last cursor position unless it's invalid or in an event handler
   autocmd BufReadPost *
-    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
 
-  " Cucumber navigation commands
-  autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-  autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
+  "for ruby, autoindent with two spaces, always expand tabs
+  autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
+  autocmd FileType python set sw=4 sts=4 et
 
-  " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd! BufRead,BufNewFile *.sass setfiletype sass 
 
-  " Enable spellchecking for Markdown
-  autocmd BufRead,BufNewFile *.md setlocal spell
+  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
+  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
 
-  " Automatically wrap at 80 characters for Markdown
-  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+  " Don't syntax highlight markdown because it's often wrong
+  autocmd! FileType mkd setlocal syn=off
+
+  " Leave the return key alone when in command line windows, since it's used
+  " to run commands there.
+  autocmd! CmdwinEnter * :unmap <cr>
+  autocmd! CmdwinLeave * :call MapCR()
+augroup END
+
+augroup filetypedetect
+  au! BufRead,BufNewFile *_spec.rb set filetype=rspec.ruby
 augroup END
 
 " Softtabs, 2 spaces
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set expandtab
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -74,52 +102,123 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" Color scheme
-colorscheme github
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
+" configure syntastic syntax checking to check on open as well as save
+let g:syntastic_check_on_open=1
+
+" Set UltiSnips to use vim-snippets
+let g:UltiSnipsSnippetsDir=["bundle/vim-snippets/snippets"]
+let g:always_use_first_snippet=1 "use first
+
 
 " Numbers
-set number
+set relativenumber
+set nu
 set numberwidth=5
 
-" Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif
+
+"Rename Current File
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <leader>n :call RenameFile()<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PROMOTE VARIABLE TO RSPEC LET
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! PromoteToLet()
+  :normal! dd
+  " :exec '?^\s*it\>'
+  :normal! P
+  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+  :normal ==
+endfunction
+:command! PromoteToLet :call PromoteToLet()
+:map <leader>l :PromoteToLet<cr>
+
 
 " Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
+" " will insert tab at beginning of line, will use completion if not at beginning
 set wildmode=list:longest,list:full
 set complete=.,w,t
 function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+
+" Remove trailing whitespace on save for ruby files.
+au BufWritePre *.rb :%s/\s\+$//e
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
 
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
-" Index ctags from any project, including those outside Rails
+" " Index ctags from any project, including those outside Rails
 map <Leader>ct :!ctags -R .<CR>
 
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+" Close all other windows, open a vertical split, and open this file's test
+" " alternate in it.
+nnoremap <leader>s :call FocusOnFile()<cr>
+function! FocusOnFile()
+  tabnew %
+  normal! v
+  normal! l
+  call OpenTestAlternate()
+  normal! h
+endfunction
+" Reload in chrome
+map <leader>l :w\|:silent !reload-chrome<cr>
 
-" vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SWITCH BETWEEN TEST AND PRODUCTION CODE
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! OpenTestAlternate()
+  let new_file = AlternateForCurrentFile()
+  exec ':e ' . new_file
+endfunction
+function! AlternateForCurrentFile()
+  let current_file = expand("%")
+  let new_file = current_file
+  let in_spec = match(current_file, '^spec/') != -1
+  let going_to_spec = !in_spec
+  let in_app = match(current_file, '\<controllers\>') != -1 || match(current_file, '\<models\>') != -1 || match(current_file, '\<views\>') != -1 || match(current_file, '\<helpers\>') != -1
+  if going_to_spec
+    if in_app
+      let new_file = substitute(new_file, '^app/', '', '')
+    end
+    let new_file = substitute(new_file, '\.e\?rb$', '_spec.rb', '')
+    let new_file = 'spec/' . new_file
+  else
+    let new_file = substitute(new_file, '_spec\.rb$', '.rb', '')
+    let new_file = substitute(new_file, '^spec/', '', '')
+    if in_app
+      let new_file = 'app/' . new_file
+    end
+  endif
+  return new_file
+endfunction
+nnoremap <leader>.  :call OpenTestAlternate()<cr>
+
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -128,16 +227,88 @@ let g:html_indent_tags = 'li\|p'
 set splitbelow
 set splitright
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RUNNING TESTS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>t :w\|:VroomRunTestFile<cr>
+map <leader>y :w\|:VroomRunNearestTest<cr>
+map <Leader>rr :w\|:!rspec --color %<cr>
+imap <Leader>rr <ESC> :w\|:!rspec --color %<cr>
+let g:vroom_map_keys = 0
 
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COLOR
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set background=dark
+colorscheme solarized
 
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" OPEN FILES IN DIRECTORY OF CURRENT FILE
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ cnoremap %% <C-R>=expand('%:h').'/'<cr>
+ map <leader>e :edit %%
+
+"""""""""""""""""""
+"Random Key Mappings
+"""""""""""""""""""
+
+"make shift-tab unindent
+nmap <S-Tab> <<
+imap <S-Tab> <Esc><<i
+
+
+"Move around splits with <c-hjkl>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" Jump into ex mode with space
+nnoremap <space> :
+map <Leader>bb :!bundle install<CR>
+map <Leader>cu :!cucumber<CR>
+map <Leader>gc :Gcommit<CR>
+map <Leader>gd :Gdiff<CR>
+map <Leader>gi :Git
+map <Leader>gs :Gstatus<CR>
+map <Leader>grm :Gremove
+map <Leader>i mmgg=G`m<CR>:w<CR>
+map <Leader>h noh<CR>
+map <Leader>m :Rmodel<CR>
+map <Leader>pn :sp ~/Dropbox/notes/programing_notes.txt<cr>
+map <Leader>ra :%s/
+map <Leader>rw :%s/\<<C-r><C-w>\>/
+map <Leader>vi :tabe ~/Dropbox/dotfiles/vimrc<CR>
+map <Leader>vu :RVunittest<CR>
+map <Leader>vm :RVmodel<cr>
+map <Leader>vv :RVview<cr>
+map <Leader>vc :RVcontroller<cr>
+map <Leader>vf :RVfunctional<cr>
+nnoremap <C-e> 3<C-e> " make ^e scroll 3 lines
+
+nnoremap <leader>w :w!<cr>
+
+" ctrl-s write
+nnoremap <c-s> :w<cr>
+
+" Yank selected text to clipboard
+vnoremap <C-c> "*y
+"Yank entire file
+map <Leader>ca ggVG"*y
+
+"Paste clipcoard
+map <Leader>vv "*p
+
+
+imap <C-j> (
+imap <C-k> )
+
+command! Q q " Bind :Q to :q
+command! Q q " Bind :Q to :q
+command! WQ wq
+command! Wq wq
+command! W w
+command! Vsp vsp
+command! Vs vsp
+command! Sp sp
+command! Xa xa

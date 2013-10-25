@@ -1,6 +1,5 @@
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
-
 # completion
 autoload -U compinit
 compinit
@@ -72,3 +71,6 @@ unsetopt nomatch
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

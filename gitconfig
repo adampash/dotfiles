@@ -23,3 +23,6 @@
   path = .gitconfig.local
 [commit]
   template = ~/.gitmessage
+[user]
+  name = Adam Pash
+  email = adam.pash@gmail.com
