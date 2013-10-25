@@ -1,0 +1,4 @@
+# Takes arguments and runs git add <args>
+ga() { 
+  git add "$*"
+}
