@@ -1,0 +1,6 @@
+" Open the rspec test in a vertical split
+function! SplitTestAlternate()
+  let new_file = AlternateForCurrentFile()
+  exec ':vs ' . new_file
+endfunction
+nnoremap <leader>vs :call SplitTestAlternate()<cr>
