@@ -1,5 +1,6 @@
 # git
 alias gp="git pull"
+alias gpp="git pull && git push"
 alias gc="git commit -v"
 
 # dotfiles
