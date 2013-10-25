@@ -1,0 +1,10 @@
+# git
+alias gp="git pull"
+alias gc="git commit -v"
+
+# dotfiles
+alias dotfiles="cd ~/dotfiles"
+alias vdotfiles="vi ~/dotfiles"
+
+#code
+alias code="cd ~/code"
