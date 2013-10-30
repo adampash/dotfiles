@@ -11,4 +11,4 @@ alias vdotfiles="vi ~/dotfiles"
 alias code="cd ~/code"
 
 # octave
-alias octave="exec '/Applications/Octave.app/Contents/Resources/bin/octave'"
+# alias octave="exec '/Applications/Octave.app/Contents/Resources/bin/octave'"
