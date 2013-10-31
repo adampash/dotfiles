@@ -2,6 +2,8 @@
 alias gp="git pull"
 alias gpp="git pull && git push"
 alias gc="git commit -v"
+alias gl="git log"
+alias glo="git log origin"
 
 # dotfiles
 alias dotfiles="cd ~/dotfiles"
