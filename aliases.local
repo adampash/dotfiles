@@ -12,5 +12,8 @@ alias vdotfiles="vi ~/dotfiles"
 # code
 alias code="cd ~/code"
 
-# octave
-# alias octave="exec '/Applications/Octave.app/Contents/Resources/bin/octave'"
+# publish jekyll blog
+alias publish="rake publish"
+
+# ensuring rake is pointing to rake
+alias rake="rake"
