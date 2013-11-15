@@ -275,10 +275,10 @@ map <Leader>grm :Gremove
 map <Leader>i mmgg=G`m<CR>:w<CR>
 map <Leader>h noh<CR>
 map <Leader>m :Rmodel<CR>
-map <Leader>pn :sp ~/Dropbox/notes/programing_notes.txt<cr>
+" map <Leader>pn :sp ~/Dropbox/notes/programing_notes.txt<cr>
 map <Leader>ra :%s/
 map <Leader>rw :%s/\<<C-r><C-w>\>/
-map <Leader>vi :tabe ~/Dropbox/dotfiles/vimrc<CR>
+map <Leader>vi :tabe ~/dotfiles<CR>
 map <Leader>vu :RVunittest<CR>
 map <Leader>vm :RVmodel<cr>
 map <Leader>vv :RVview<cr>
@@ -297,7 +297,7 @@ vnoremap <C-c> "*y
 map <Leader>ca ggVG"*y
 
 "Paste clipcoard
-map <Leader>vv "*p
+map <Leader>p "*p
 
 
 imap <C-j> (
