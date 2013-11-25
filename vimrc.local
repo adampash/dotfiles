@@ -11,3 +11,5 @@ nnoremap<leader>x :x!<cr>
 nnoremap<leader>q :q!<cr>
 
 map <leader>bp Orequire 'pry'; binding.pry <C-[> :w\|:VroomRunTestFile<cr>
+
+" set mouse=a
