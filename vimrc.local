@@ -13,3 +13,5 @@ nnoremap<leader>q :q!<cr>
 map <leader>bp Orequire 'pry'; binding.pry <C-[> :w\|:VroomRunTestFile<cr>
 
 " set mouse=a
+
+set rtp+=~/dotfiles/powerline/powerline/bindings/vim
