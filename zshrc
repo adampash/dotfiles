@@ -74,3 +74,4 @@ unsetopt nomatch
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME:/usr/local/depot_tools # Add depot_tools for gclient
