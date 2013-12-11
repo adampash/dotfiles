@@ -72,6 +72,11 @@ unsetopt nomatch
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
+# set NACL_SDK_ROOT for Native Client
+NACL_SDK_ROOT=$HOME/SDKs/nacl/pepper_31
+
+# set emscripten SDK path
+PATH=$PATH:$HOME/SDKs/emscripten/emsdk_portable
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:$HOME:/usr/local/depot_tools # Add depot_tools for gclient
+# PATH=$PATH:$HOME:/usr/local/depot_tools # Add depot_tools for gclient
