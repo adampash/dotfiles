@@ -17,3 +17,7 @@ alias publish="rake publish"
 
 # ensuring rake is pointing to rake
 alias rake="rake"
+
+copy () { 
+  cat "$@" | pbcopy;
+}
