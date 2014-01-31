@@ -1,0 +1,6 @@
+set imap_user = "adam.pash@gmail.com"
+set smtp_url  = "smtp://adam.pash@smtp.gmail.com:58?"
+set from      = "adam.pash@gmail.com"
+set realname  = "Adam Pash"
+
+set editor = "vi"
