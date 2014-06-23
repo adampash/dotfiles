@@ -22,3 +22,11 @@ bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 # bind C-] run '~/dotfiles/tmux/tmux-powerline/mute_powerline.sh right'     # Mute right statusbar
 
 source '/Users/ap/dotfiles/powerline/powerline/bindings/tmux/powerline.conf'
+
+# setw -g mode-mouse on
+
+# don't wait for an escape sequence after hitting
+# Esc. fixes insert mode exit lag in vim
+set -sg escape-time 0
+
+set-option -g mouse-resize-pane on

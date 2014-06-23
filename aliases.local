@@ -1,3 +1,6 @@
+# reload zsh
+alias reload="source ~/.zshrc"
+
 # git
 alias gp="git pull"
 alias gpp="git pull && git push"
@@ -11,6 +14,7 @@ alias vdotfiles="vi ~/dotfiles"
 
 # code
 alias code="cd ~/code"
+alias packet="cd ~/code/packet"
 
 # publish jekyll blog
 alias publish="rake publish"
@@ -18,6 +22,33 @@ alias publish="rake publish"
 # ensuring rake is pointing to rake
 alias rake="rake"
 
+# launch chrome
+# alias chrome="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --enable-nacl --enable-nacl-debug --no-sandbox --disable-hang-monitor"
+
+# chrome nacl debug
+alias chrome="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --enable-nacl --enable-nacl-debug --no-sandbox --disable-hang-monitor"
+
+# run nacl-gdb
+alias gdb="/Users/ap/SDKs/nacl/pepper_31/toolchain/mac_x86_newlib/bin/x86_64-nacl-gdb"
+
 copy () { 
   cat "$@" | pbcopy;
 }
+
+alias titanium.py="~/Library/Application\ Support/Titanium/mobilesdk/osx/3.2.2.GA/titanium.py"
+
+# remove the -I 7.1 bit once titanium is better suited for ios 8
+alias ios_simulator_build="titanium build -T simulator --platform iphone -n warnings --retina -I 7.1"
+
+alias ios_build="titanium build -T device --platform iphone -C b6eba0c1f0f8205891adb2d8fda5437fa79d080a -P 4E6DB37A-D929-4FB2-96FD-24CA782D375E"
+alias ios_wildcard_build="titanium build -T device --platform iphone -C b6eba0c1f0f8205891adb2d8fda5437fa79d080a -P 0F40C3E3-99C0-4E2B-8E42-F9AE5C793AB3"
+alias ellen_ios_build="titanium build -T device --platform iphone -C b8c79abbc2ada25bdd721ecd024a96827d6b5e73 -P DE3B31A9-2779-46B3-A7DE-BCDD366585B8"
+alias testflight_ios_build="titanium build -T dist-adhoc --platform iphone -P 806BB6B7-74CA-432E-B31F-517A7C744028"
+alias android_build="titanium build -T device --platform android"
+
+
+# restart pow
+alias pow_restart="touch ~/.pow/restart.txt"
+
+# undo last git command
+alias jk="history 10 | tail -r | gitjk_cmd"
