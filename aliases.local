@@ -1,6 +1,11 @@
 # reload zsh
 alias reload="source ~/.zshrc"
 
+# start and stop mysql
+export MYSQL_HOME=/usr/local/bin
+alias start_mysql='sudo $MYSQL_HOME/mysqld_safe &'
+alias stop_mysql='sudo $MYSQL_HOME/mysqladmin shutdown'
+
 # git
 alias gp="git pull"
 alias gpp="git pull && git push"
@@ -41,7 +46,7 @@ alias titanium.py="~/Library/Application\ Support/Titanium/mobilesdk/osx/3.2.2.G
 alias ios_simulator_build="titanium build -T simulator --platform iphone -n warnings --retina -I 7.1"
 
 alias ios_build="titanium build -T device --platform iphone -C b6eba0c1f0f8205891adb2d8fda5437fa79d080a -P 4E6DB37A-D929-4FB2-96FD-24CA782D375E"
-alias ios_wildcard_build="titanium build -T device --platform iphone -C b6eba0c1f0f8205891adb2d8fda5437fa79d080a -P 0F40C3E3-99C0-4E2B-8E42-F9AE5C793AB3"
+alias ios_wildcard_build="titanium build -T device --platform iphone -C b6eba0c1f0f8205891adb2d8fda5437fa79d080a -P BDC8CF52-E9CD-4223-827A-D542EDF388A5"
 alias ellen_ios_build="titanium build -T device --platform iphone -C b8c79abbc2ada25bdd721ecd024a96827d6b5e73 -P DE3B31A9-2779-46B3-A7DE-BCDD366585B8"
 alias testflight_ios_build="titanium build -T dist-adhoc --platform iphone -P 806BB6B7-74CA-432E-B31F-517A7C744028"
 alias android_build="titanium build -T device --platform android"

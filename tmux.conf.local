@@ -1,3 +1,6 @@
+# open new pane in current dir
+bind % split-window -h -c "#{pane_current_path}"
+bind '"' split-window -c "#{pane_current_path}"
 
 # Smart pane switching with awareness of vim splits
 bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-h) || tmux select-pane -L"
@@ -6,27 +9,15 @@ bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-l) || tmux select-pane -R"
 bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys 'C-\\') || tmux select-pane -l"
 
-# tmux powerline (see https://github.com/erikw/tmux-powerline)
-# set-option -g status on
-# set-option -g status-interval 2
-# set-option -g status-utf8 on
-# set-option -g status-justify "centre"
-# set-option -g status-left-length 90
-# set-option -g status-right-length 90
-# set-option -g status-left "#(~/dotfiles/tmux/tmux-powerline/powerline.sh left)"
-# set-option -g status-right "#(~/dotfiles/tmux/tmux-powerline/powerline.sh right)"
-
-# set-window-option -g window-status-current-format "#[fg=colour235, bg=colour27]⮀#[fg=colour255, bg=colour27] #I ⮁ #W #[fg=colour27, bg=colour235]⮀"
-
-# bind C-[ run '~/dotfiles/tmux/tmux-powerline/mute_powerline.sh left'      # Mute left statusbar.
-# bind C-] run '~/dotfiles/tmux/tmux-powerline/mute_powerline.sh right'     # Mute right statusbar
-
 source '/Users/ap/dotfiles/powerline/powerline/bindings/tmux/powerline.conf'
-
-# setw -g mode-mouse on
 
 # don't wait for an escape sequence after hitting
 # Esc. fixes insert mode exit lag in vim
 set -sg escape-time 0
 
+# mouse stuff
 set-option -g mouse-resize-pane on
+set -g mode-mouse on
+set -g mouse-select-pane on
+set -g mouse-select-window on
+
