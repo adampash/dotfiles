@@ -38,9 +38,11 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
 endif
 
 "clear the search buffer when hitting return or esc
-augroup no_highlight
-  autocmd TermResponse * nnoremap <esc> :noh<return><esc>
-augroup END
+nnoremap <silent> <esc> :noh<cr><esc>
+" augroup no_highlight
+"   autocmd TermResponse * nnoremap <esc> :noh<return><esc>
+" augroup END
+
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
