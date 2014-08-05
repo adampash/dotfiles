@@ -243,7 +243,8 @@ let g:vroom_map_keys = 0
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark
 colorscheme solarized
-
+" Below is for better colorscheme for gitgutter
+highlight clear SignColumn
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OPEN FILES IN DIRECTORY OF CURRENT FILE
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -52,6 +52,10 @@ alias ellen_ios_build="titanium build -T device --platform iphone -C b8c79abbc2a
 alias testflight_ios_build="titanium build -T dist-adhoc --platform iphone -P 806BB6B7-74CA-432E-B31F-517A7C744028"
 alias android_build="titanium build -T device --platform android"
 
+# alias test_mod="cd ~/code/ti_modules/contacts_search/android && ant && cd ~/code/ti_modules/contact_test && ln -s ../contacts_search/android/dist/com.adampash.contactsearch-android-1.0.0.zip && android_build"
+# alias test_mod="cd ~/code/ti_modules/parse_push_android/android && ant && cd ~/code/ti_modules/parse_push_test && ln -s ../parse_push_android/android/dist/com.adampash.*-android-1.0.0.zip && android_build"
+alias test_mod="cd ~/code/ti_modules/android_geofence/android && ant && cd ~/code/ti_modules/geofence_test && ln -s ../android_geofence/android/dist/com.adampash.*-android-1.0.0.zip && android_build"
+
 
 # restart pow
 alias pow_restart="touch ~/.pow/restart.txt"
