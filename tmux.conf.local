@@ -2,6 +2,12 @@
 bind % split-window -h -c "#{pane_current_path}"
 bind '"' split-window -c "#{pane_current_path}"
 
+# resize panes
+# bind -n C-e resize-pane -U 1
+# bind -n C-c resize-pane -D 1
+# bind -n C-w resize-pane -L 1
+# bind -n C-r resize-pane -R 1
+
 # Smart pane switching with awareness of vim splits
 bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-h) || tmux select-pane -L"
 bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-j) || tmux select-pane -D"
