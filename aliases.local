@@ -47,6 +47,7 @@ alias ios_simulator_build="titanium build -T simulator --platform iphone -n warn
 
 alias ios_build="titanium build -T device --platform iphone -C b6eba0c1f0f8205891adb2d8fda5437fa79d080a -P 4E6DB37A-D929-4FB2-96FD-24CA782D375E"
 alias ios_packet_build="titanium build -T device --platform iphone -C b6eba0c1f0f8205891adb2d8fda5437fa79d080a -P 85D5FE09-CF01-4B0D-99C1-84569DB01E6A"
+alias ellen_packet_build="titanium build -T device --platform iphone -C b8c79abbc2ada25bdd721ecd024a96827d6b5e73 -P 85D5FE09-CF01-4B0D-99C1-84569DB01E6A"
 alias ios_wildcard_build="titanium build -T device --platform iphone -C b6eba0c1f0f8205891adb2d8fda5437fa79d080a -P BDC8CF52-E9CD-4223-827A-D542EDF388A5"
 alias ellen_ios_build="titanium build -T device --platform iphone -C b8c79abbc2ada25bdd721ecd024a96827d6b5e73 -P DE3B31A9-2779-46B3-A7DE-BCDD366585B8"
 alias testflight_ios_build="titanium build -T dist-adhoc --platform iphone -P 806BB6B7-74CA-432E-B31F-517A7C744028"
