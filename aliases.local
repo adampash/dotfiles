@@ -1,6 +1,9 @@
 # reload zsh
 alias reload="source ~/.zshrc"
 
+# update locate db
+alias update_locate="sudo /usr/libexec/locate.updatedb"
+
 # start and stop mysql
 export MYSQL_HOME=/usr/local/bin
 alias start_mysql='sudo $MYSQL_HOME/mysqld_safe &'
