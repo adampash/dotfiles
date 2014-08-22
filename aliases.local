@@ -67,3 +67,7 @@ alias pow_restart="touch ~/.pow/restart.txt"
 
 # undo last git command
 alias jk="history 10 | tail -r | gitjk_cmd"
+
+# thinkup aliases
+alias tu_docs_build="sphinx-build -b html ~/code/thinkup/docs/source/ ~/code/thinkup/docs/source/build"
+alias tu="cd ~/code/thinkup"
