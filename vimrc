@@ -295,7 +295,8 @@ nnoremap <leader>w :w!<cr>
 nnoremap <c-s> :w<cr>
 
 " Yank selected text to clipboard
-vnoremap <C-c> "*y
+" vnoremap <C-c> "*y
+vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 "Yank entire file
 map <Leader>ca ggVG"*y
 
