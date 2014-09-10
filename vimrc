@@ -304,7 +304,8 @@ vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
 map <Leader>ca ggVG"*y
 
 "Paste clipcoard
-map <Leader>p "*p
+" map <Leader>p "*p
+map <Leader>p :call setreg("\"",system("pbpaste"))<CR>p
 
 
 imap <C-j> (
