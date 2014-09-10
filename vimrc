@@ -114,8 +114,11 @@ let g:always_use_first_snippet=1 "use first
 
 " Numbers
 set relativenumber
-set nu
-set numberwidth=5
+" set nu
+" set numberwidth=5
+set numberwidth=2
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
