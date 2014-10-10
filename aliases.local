@@ -46,7 +46,8 @@ copy () {
 alias titanium.py="~/Library/Application\ Support/Titanium/mobilesdk/osx/3.2.2.GA/titanium.py"
 
 # remove the -I 7.1 bit once titanium is better suited for ios 8
-alias ios_simulator_build="titanium build -T simulator --platform iphone -n warnings --retina -I 7.1"
+alias ios_simulator_build="titanium build -T simulator --platform iphone -n warnings --retina -I 8.0"
+alias ios7_simulator_build="titanium build -T simulator --platform iphone -n warnings --retina -S 7.1"
 
 alias ios_build="titanium build -T device --platform iphone -C b6eba0c1f0f8205891adb2d8fda5437fa79d080a -P 4E6DB37A-D929-4FB2-96FD-24CA782D375E"
 alias ios_packet_build="titanium build -T device --platform iphone -C b6eba0c1f0f8205891adb2d8fda5437fa79d080a -P 85D5FE09-CF01-4B0D-99C1-84569DB01E6A"
@@ -71,3 +72,6 @@ alias jk="history 10 | tail -r | gitjk_cmd"
 # thinkup aliases
 alias tu_docs_build="sphinx-build -b html ~/code/thinkup/docs/source/ ~/code/thinkup/docs/source/build"
 alias tu="cd ~/code/thinkup"
+
+# ddms android debug tool alias
+alias ddms="/Applications/Android\ SDK/tools/ddms"
