@@ -320,3 +320,6 @@ command! Vsp vsp
 command! Vs vsp
 command! Sp sp
 command! Xa xa
+
+" Special extension settings
+au BufRead,BufNewFile *.tss,*.webapp set filetype=javascript " Titanium Alloy Style Files
