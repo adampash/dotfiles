@@ -67,6 +67,8 @@ augroup vimrcEx
   "for ruby, autoindent with two spaces, always expand tabs
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
   autocmd FileType python set sw=4 sts=4 et
+  "for php, autoindent with four spaces
+  autocmd FileType php set ai sw=4 sts=4 et
 
   autocmd! BufRead,BufNewFile *.sass setfiletype sass 
 
@@ -322,4 +324,4 @@ command! Sp sp
 command! Xa xa
 
 " Special extension settings
-au BufRead,BufNewFile *.tss,*.webapp set filetype=javascript " Titanium Alloy Style Files
+au BufRead,BufNewFile *.tss,*.webapp,*.json set filetype=javascript " Titanium Alloy Style Files
