@@ -78,5 +78,8 @@ NACL_SDK_ROOT=$HOME/SDKs/nacl/pepper_31
 # set emscripten SDK path
 PATH=$PATH:$HOME/SDKs/emscripten/emsdk_portable
 
+# path for local npm
+PATH=$PATH:$HOME/npm/bin
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # PATH=$PATH:$HOME:/usr/local/depot_tools # Add depot_tools for gclient
