@@ -39,6 +39,8 @@ endif
 
 "clear the search buffer when hitting return or esc
 nnoremap <silent> <esc> :noh<cr><esc>
+"go to end of line with e
+map e $
 " augroup no_highlight
 "   autocmd TermResponse * nnoremap <esc> :noh<return><esc>
 " augroup END
