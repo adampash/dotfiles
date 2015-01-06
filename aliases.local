@@ -46,12 +46,13 @@ copy () {
 alias titanium.py="~/Library/Application\ Support/Titanium/mobilesdk/osx/3.2.2.GA/titanium.py"
 
 # remove the -I 7.1 bit once titanium is better suited for ios 8
-alias ios_simulator_build="titanium build -T simulator --platform iphone -n warnings --retina -I 8.0"
+alias ios_simulator_build="killall \"iOS Simulator\"; titanium build -T simulator --platform iphone -n warnings --retina -I 8.0"
 alias ios7_simulator_build="titanium build -T simulator --platform iphone -n warnings --retina -S 7.1"
 
 alias ios_build="titanium build -T device --platform iphone -C b6eba0c1f0f8205891adb2d8fda5437fa79d080a -P 4E6DB37A-D929-4FB2-96FD-24CA782D375E"
 alias ios_packet_build="titanium build -T device --platform iphone -C b6eba0c1f0f8205891adb2d8fda5437fa79d080a -P 85D5FE09-CF01-4B0D-99C1-84569DB01E6A --skip-js-minify"
 alias ellen_packet_build="titanium build -T device --platform iphone -C b8c79abbc2ada25bdd721ecd024a96827d6b5e73 -P 85D5FE09-CF01-4B0D-99C1-84569DB01E6A"
+alias rand_packet_build="titanium build -T device --platform iphone -C 59911b4538442a1b21ddad3dd1331e7cf9376c5d -P acd0ec49-64c3-49a9-a4a4-be23cf8d4138"
 alias ios_wildcard_build="titanium build -T device --platform iphone -C b6eba0c1f0f8205891adb2d8fda5437fa79d080a -P BDC8CF52-E9CD-4223-827A-D542EDF388A5"
 alias ellen_ios_build="titanium build -T device --platform iphone -C b8c79abbc2ada25bdd721ecd024a96827d6b5e73 -P DE3B31A9-2779-46B3-A7DE-BCDD366585B8"
 alias testflight_ios_build="titanium build -T dist-adhoc --platform iphone -P 806BB6B7-74CA-432E-B31F-517A7C744028"
@@ -61,6 +62,7 @@ alias ti_test_contacts_search_module="cd ~/code/ti_modules/contacts_search/andro
 alias ti_test_push_module="cd ~/code/ti_modules/parse_push_android/android && ant && cd ~/code/ti_modules/parse_push_test && ln -s ../parse_push_android/android/dist/com.adampash.*-android-1.0.0.zip && android_build"
 alias ti_test_geofence_module="cd ~/code/ti_modules/android_geofence/android && ant && cd ~/code/ti_modules/geofence_test && ln -s ../android_geofence/android/dist/com.adampash.*-android-1.0.0.zip && android_build"
 alias ti_test_geofence_ios_module="cd ~/code/ti_modules/ci.geofencing/ && python build.py"
+alias ti_test_parse_module="cd ~/code/ti_modules/android-parse-titanium-module/ && ant && cd ~/code/ti_modules/android-parse-titanium-module" # && ln -s ../parse_push_android/android/dist/com.*.*-android-0.2.0.zip && android_build"
 
 
 # restart pow
