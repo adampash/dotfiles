@@ -8,8 +8,8 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
-# automatically enter directories without cd
-setopt auto_cd
+# automatically enter directories without cd /// removed b/c annoying
+# setopt auto_cd
 
 # use vim as the visual editor
 export VISUAL=vim
