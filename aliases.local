@@ -77,3 +77,6 @@ alias tu="cd ~/code/thinkup"
 
 # ddms android debug tool alias
 alias ddms="/Applications/Android\ SDK/tools/ddms"
+
+# alias for labs
+alias labs="cd ~/code/labs"
