@@ -23,11 +23,20 @@
 function gh() {
   giturl=$(git config --get remote.origin.url)
 
-  giturl=${giturl/git\@github\.com\:/https://github.com/}
-  giturl=${giturl/\.git/}
-  branch="$(git symbolic-ref HEAD 2>/dev/null)" ||
-  branch="(unnamed branch)"     # detached HEAD
-  branch=${branch##refs/heads/}
-  giturl=$giturl/tree/$branch
-  open $giturl
+  if [[ -z "$giturl" ]]; then
+    new_git_url="https://github.com/new"
+    echo "Opening $new_git_url"
+    open $new_git_url
+    return
+  else
+    giturl=$(git config --get remote.origin.url)
+    giturl=${giturl/git\@github\.com\:/https://github.com/}
+    giturl=${giturl/\.git/}
+    branch="$(git symbolic-ref HEAD 2>/dev/null)" ||
+    branch="(unnamed branch)"     # detached HEAD
+    branch=${branch##refs/heads/}
+    giturl=$giturl/tree/$branch
+    echo "Opening $giturl"
+    open $giturl
+  fi
 }

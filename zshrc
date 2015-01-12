@@ -78,6 +78,9 @@ NACL_SDK_ROOT=$HOME/SDKs/nacl/pepper_31
 # set emscripten SDK path
 PATH=$PATH:$HOME/SDKs/emscripten/emsdk_portable
 
+
+PATH=$PATH:/usr/bin
+
 # path for local npm
 PATH=$PATH:$HOME/npm/bin
 

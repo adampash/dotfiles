@@ -14,7 +14,8 @@ map <leader>bp Orequire 'pry'; binding.pry <C-[> :w\|:VroomRunTestFile<cr>
 
 " set mouse=a
 
-set rtp+=~/dotfiles/powerline/powerline/bindings/vim
+" set rtp+=~/dotfiles/powerline/powerline/bindings/vim
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 
 " set the cursor to a vertical line in insert mode and a solid block
 " in command mode
