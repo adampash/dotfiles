@@ -29,3 +29,10 @@ set-option -g mouse-resize-pane on
 set -g mode-mouse on
 set -g mouse-select-pane on
 set -g mouse-select-window on
+
+
+# automatic rename for windows
+setw -g automatic-rename on
+
+# refresh tmux conf
+bind R source-file ~/.tmux.conf \; display-message "Config reloaded..."

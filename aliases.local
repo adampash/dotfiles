@@ -80,3 +80,6 @@ alias ddms="/Applications/Android\ SDK/tools/ddms"
 
 # alias for labs
 alias labs="cd ~/code/labs"
+
+# pg_dump alias
+alias pg_dump="/Applications/Postgres.app/Contents/Versions/9.4/bin/pg_dump"
