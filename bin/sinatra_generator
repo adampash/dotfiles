@@ -1,0 +1,32 @@
+echo $1;
+mkdir $1;
+cd $1;
+echo "source 'https://rubygems.org'
+ruby '2.2.0'
+
+gem 'sinatra'
+gem 'puma'
+
+group :development do
+  gem 'rspec'
+  gem 'guard-rspec'
+  gem 'pry'
+end" > Gemfile;
+
+echo "web: bundle exec ruby web.rb -p $PORT" > Procfile;
+
+echo "require 'sinatra'
+
+get '/' do
+  status 200
+  body 'Hello world'
+end" > web.rb;
+
+mkdir lib;
+mkdir spec;
+mkdir spec/lib;
+
+bundle install;
+guard init;
+git init;
+git add;
