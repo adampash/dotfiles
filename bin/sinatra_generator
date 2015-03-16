@@ -29,4 +29,4 @@ mkdir spec/lib;
 bundle install;
 guard init;
 git init;
-git add;
+git add .;
