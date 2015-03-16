@@ -1,4 +1,4 @@
-echo $1;
+echo Generating $1...;
 mkdir $1;
 cd $1;
 echo "source 'https://rubygems.org'
