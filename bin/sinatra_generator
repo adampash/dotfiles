@@ -1,6 +1,8 @@
 echo Generating $1...;
 mkdir $1;
 cd $1;
+
+# set up Gemfile
 echo "source 'https://rubygems.org'
 ruby '2.2.0'
 
@@ -13,14 +15,21 @@ group :development do
   gem 'pry'
 end" > Gemfile;
 
+# set up Procfile
 echo "web: bundle exec ruby web.rb -p $PORT" > Procfile;
 
+# set up web.rb
 echo "require 'sinatra'
 
 get '/' do
   status 200
   body 'Hello world'
 end" > web.rb;
+
+# set up Rakefile
+echo "task :say_hello do
+  puts \"HELLO!!!\"
+end" > Rakefile
 
 mkdir lib;
 mkdir spec;
