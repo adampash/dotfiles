@@ -16,7 +16,7 @@ group :development do
 end" > Gemfile;
 
 # set up Procfile
-echo "web: bundle exec ruby web.rb -p $PORT" > Procfile;
+echo 'web: bundle exec ruby web.rb -p $PORT' > Procfile;
 
 # set up web.rb
 echo "require 'sinatra'
