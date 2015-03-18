@@ -83,3 +83,6 @@ alias labs="cd ~/code/labs"
 
 # pg_dump alias
 alias pg_dump="/Applications/Postgres.app/Contents/Versions/9.4/bin/pg_dump"
+
+# remigrate all local rails dbs
+alias remigrate="rake db:drop && rake db:create && rake db:migrate && rake db:schema:dump && rake db:test:prepare"
