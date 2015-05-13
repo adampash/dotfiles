@@ -32,6 +32,8 @@ Bundle 'tpope/vim-markdown'
 Bundle 'adinapoli/vim-markmultiple'
 Bundle 'reedes/vim-pencil'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'mtscout6/vim-cjsx'
+Bundle 'emorikawa/coffeelint-cjsx'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
