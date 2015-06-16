@@ -24,6 +24,7 @@ Bundle 'tpope/vim-obsession'
 Bundle 'skalnik/vim-vroom'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-scripts/ctags.vim'
@@ -34,6 +35,9 @@ Bundle 'reedes/vim-pencil'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'mtscout6/vim-cjsx'
 Bundle 'emorikawa/coffeelint-cjsx'
+Bundle 'rking/ag.vim'
+Bundle 'Raimondi/delimitMate'
+" Bundle 'Valloric/YouCompleteMe'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
