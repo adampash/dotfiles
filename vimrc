@@ -1,5 +1,7 @@
 let mapleader = ","
-set shell=/bin/bash
+set shell=/bin/zsh
+
+let g:syntastic_javascript_checkers = ['eslint']
 
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
@@ -115,7 +117,9 @@ let g:syntastic_coffee_checkers = ['coffeelint']
 " Set UltiSnips to use vim-snippets
 let g:UltiSnipsSnippetsDir=["bundle/vim-snippets/snippets"]
 let g:always_use_first_snippet=1 "use first
-
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
 " Numbers
 set relativenumber

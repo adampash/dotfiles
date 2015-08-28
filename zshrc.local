@@ -42,3 +42,6 @@ setopt appendhistory autocd nomatch autopushd pushdignoredups promptsubst
 
 export ANDROID_NDK=~/android-sdk/android-ndk-r9d
 export ANDROID_SDK=~/android-sdk/sdk
+
+# for slimerjs executable
+export SLIMERJSLAUNCHER=/Applications/Firefox.app/Contents/MacOS/firefox

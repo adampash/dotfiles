@@ -36,7 +36,23 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'mtscout6/vim-cjsx'
 Bundle 'emorikawa/coffeelint-cjsx'
 Bundle 'rking/ag.vim'
-Bundle 'Raimondi/delimitMate'
+" Bundle 'Raimondi/delimitMate'
+
+" vim-snippets requirements
+" Bundle "MarcWeber/vim-addon-mw-utils"
+" Bundle "tomtom/tlib_vim"
+" Bundle "garbas/vim-snipmate"
+" Optional:
+" Bundle "SirVer/ultisnips"
+" Bundle "honza/vim-snippets"
+
+" vim-react-snippets:
+Bundle "justinj/vim-react-snippets"
+Bundle "mxw/vim-jsx"
+Bundle "pangloss/vim-javascript"
+Bundle "mattn/emmet-vim"
+
+" more effort to work
 " Bundle 'Valloric/YouCompleteMe'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
