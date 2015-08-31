@@ -53,7 +53,7 @@ Bundle "pangloss/vim-javascript"
 Bundle "mattn/emmet-vim"
 
 " more effort to work
-" Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

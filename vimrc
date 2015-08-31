@@ -1,8 +1,6 @@
 let mapleader = ","
 set shell=/bin/zsh
 
-let g:syntastic_javascript_checkers = ['eslint']
-
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
 set nowritebackup
@@ -113,6 +111,11 @@ endif
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
 let g:syntastic_coffee_checkers = ['coffeelint']
+let g:syntastic_javascript_checkers = ['eslint']
+
+" configure templates
+au BufNewFile *.jsx $r ~/.vim/templates/template.jsx
+
 
 " Set UltiSnips to use vim-snippets
 let g:UltiSnipsSnippetsDir=["bundle/vim-snippets/snippets"]
