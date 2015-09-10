@@ -88,3 +88,6 @@ PATH=$PATH:$HOME/npm/bin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # PATH=$PATH:$HOME:/usr/local/depot_tools # Add depot_tools for gclient
+
+export NVM_DIR="/Users/ap/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
