@@ -115,6 +115,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " configure templates
 au BufNewFile *.jsx $r ~/.vim/templates/template.jsx
+let g:jsx_ext_required = 0
 
 
 " Set UltiSnips to use vim-snippets
