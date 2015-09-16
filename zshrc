@@ -75,6 +75,9 @@ unsetopt nomatch
 # set NACL_SDK_ROOT for Native Client
 NACL_SDK_ROOT=$HOME/SDKs/nacl/pepper_31
 
+# set ANDROID_HOME for react-native
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
 # set emscripten SDK path
 PATH=$PATH:$HOME/SDKs/emscripten/emsdk_portable
 
