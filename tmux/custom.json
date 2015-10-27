@@ -1,0 +1,42 @@
+{
+  "segments": {
+    "right": [
+      {
+        "function": "powerline.segments.common.players.rdio",
+        "args": {
+          "format": "{state_symbol} {artist} - {title}",
+          "state_symbols": {
+            "play": "► ",
+            "pause": ""
+          }
+        }
+      },
+      {
+        "function": "powerline.segments.common.time.date",
+        "args": {
+          "format": "%-m-%-d-%Y"
+        }
+      },
+      {
+        "function": "powerline.segments.common.time.date",
+        "name": "time",
+        "args": {
+          "format": "%-I:%M%p",
+          "istime": true
+        }
+      },
+      {
+        "function": "powerline.segments.common.wthr.weather",
+        "args": {
+          "unit": "F"
+        }
+      },
+      {
+        "function": "powerline.segments.common.bat.battery",
+        "args": {
+          "gamify": true
+        }
+      }
+    ]
+  }
+}
