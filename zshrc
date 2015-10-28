@@ -1,3 +1,13 @@
+# Load zsh-syntax-highlighting.
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# use zsh plugins
+plugins=(git sudo bundler osx rake ruby aws cp emoji gem heroku tmux)
+
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 # completion
@@ -58,7 +68,7 @@ setopt AUTOPUSHD PUSHDMINUS PUSHDSILENT PUSHDTOHOME
 setopt cdablevars
 
 # Try to correct command line spelling
-setopt CORRECT CORRECT_ALL
+setopt CORRECT
 
 # Enable extended globbing
 setopt EXTENDED_GLOB

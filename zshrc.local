@@ -39,8 +39,6 @@ PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -
 
 # added to get history playing nice w/tmux
 HISTFILE=$HOME/.zhistory # where the file will be saved
-HISTSIZE=1000 # the size in bytes it can grow up to
-SAVEHIST=1000 # thr maximum number of commands to save I guess
 setopt appendhistory autocd nomatch autopushd pushdignoredups promptsubst
 
 export ANDROID_NDK=~/android-sdk/android-ndk-r9d
