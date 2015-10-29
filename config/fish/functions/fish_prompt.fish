@@ -1,25 +1,29 @@
+set red d30102
+set blue 268bd2
+set gray 657b83
+
 set __fish_git_prompt_show_informative_status 'true'
 set __fish_git_prompt_showcolorhints 'true'
 set __fish_git_prompt_char_stateseparator " "
-__fish_git_prompt_set_color __fish_git_prompt_color_branch  (set_color d30102)
-
-
+__fish_git_prompt_set_color __fish_git_prompt_color_branch  (set_color $blue)
 
 function fish_prompt
   # echo -n (basename $PWD)
-  set_color 268bd2
+  set_color yellow
   echo -n (prompt_pwd)
-  set_color 657b83
+  set_color $gray
   __fish_git_prompt " ♆ %s "
   # echo -n (__fish_git_prompt_show_informative_status)
   # red
-  set_color d30102
+  set_color $red
+  # blue
+  set_color $blue
   echo -n " ❯"
   # gray
-  set_color 657b83
+  set_color $gray
   echo -n "❯"
-  # blue
-  set_color 268bd2
+  # red
+  set_color $red
   echo -n "❯ "
 end
 
