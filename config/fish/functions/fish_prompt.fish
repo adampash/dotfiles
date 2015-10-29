@@ -1,16 +1,18 @@
 set __fish_git_prompt_show_informative_status 'true'
 set __fish_git_prompt_showcolorhints 'true'
 set __fish_git_prompt_char_stateseparator " "
+__fish_git_prompt_set_color __fish_git_prompt_color_branch  (set_color d30102)
+
 
 
 function fish_prompt
   # echo -n (basename $PWD)
   set_color 268bd2
   echo -n (prompt_pwd)
-  # red
   set_color 657b83
   __fish_git_prompt " ♆ %s "
   # echo -n (__fish_git_prompt_show_informative_status)
+  # red
   set_color d30102
   echo -n " ❯"
   # gray
