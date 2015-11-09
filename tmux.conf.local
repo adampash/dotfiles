@@ -26,10 +26,7 @@ source "/Library/Python/2.7/site-packages/powerline/bindings/tmux/powerline.conf
 set -sg escape-time 0
 
 # mouse stuff
-set-option -g mouse-resize-pane on
-set -g mode-mouse on
-set -g mouse-select-pane on
-set -g mouse-select-window on
+set-option -g -q mouse on
 
 
 # automatic rename for windows
