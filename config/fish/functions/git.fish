@@ -3,6 +3,7 @@ alias ga "git add"
 alias gc "git commit"
 alias gl "git log"
 alias gb "git branch"
+alias gd "git diff"
 
 function g
   if count $argv > /dev/null
