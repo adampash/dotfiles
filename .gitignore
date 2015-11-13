@@ -4,3 +4,4 @@ tmux/plugins/
 tmux/resurrect/
 config/fish/fish_history
 config/configstore
+vim/.netrwhist
