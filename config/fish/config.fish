@@ -1,6 +1,9 @@
 fish_vi_mode
 fish_vi_cursor
 
+# accept autocomplete suggestion with ctr+]
+bind -M insert \c] accept-autosuggestion
+
 . "$HOME/.config/fish/functions/aliases.fish"
 . "$HOME/.config/fish/functions/git.fish"
 
