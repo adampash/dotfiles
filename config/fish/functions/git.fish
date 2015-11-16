@@ -1,5 +1,4 @@
 # some nice git shortcuts
-alias ga "git add"
 alias gc "git commit"
 alias gl "git log"
 alias gb "git branch"
@@ -10,6 +9,14 @@ function g
     git $argv
   else
     git status
+  end
+end
+
+function ga
+  if count $argv > /dev/null
+    git add $argv
+  else
+    git add .
   end
 end
 
