@@ -10,7 +10,6 @@ function ls
   command ls -lahG $argv
 end
 
-
 function new_interactive
   git clone git@github.com:adampash/react-redux-static-boilerplate.git
   mv react-redux-static-boilerplate $argv
@@ -19,4 +18,11 @@ function new_interactive
   git init
   git add .
   git commit -m "initial commit"
+  npm install
+end
+
+function kill_with_port
+  set pid (sudo lsof -t -i:$argv)
+  echo "Killing process $pid"
+  kill $pid
 end
