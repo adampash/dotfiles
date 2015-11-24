@@ -21,6 +21,11 @@ function ga
 end
 
 function gh
-  open (git remote -v | grep origin | grep fetch | awk '{print $2}' | sed 's/git@/http:\/\//' | sed 's/com:/com\//' | head -n1)
+  if test -d .git
+    open (git remote -v | grep origin | grep fetch | awk '{print $2}' | sed 's/git@/http:\/\//' | sed 's/com:/com\//' | head -n1)
+  else
+    git init
+    hub create
+  end
 end
 
