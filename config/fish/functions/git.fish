@@ -22,8 +22,10 @@ end
 
 function gh
   if test -d .git
+    echo "Opening github repo"
     open (git remote -v | grep origin | grep fetch | awk '{print $2}' | sed 's/git@/http:\/\//' | sed 's/com:/com\//' | head -n1)
   else
+    echo "Creating github repo"
     git init
     hub create
   end
