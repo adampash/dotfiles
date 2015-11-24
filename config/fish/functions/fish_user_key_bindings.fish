@@ -1,6 +1,3 @@
-# set -g fish_key_bindings fish_vi_key_bindings
-
-echo "LOADED"
 function fish_user_key_bindings
   fish_vi_mode
   # accept autocomplete suggestion with ctr+]
