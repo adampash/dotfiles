@@ -6,3 +6,4 @@ config/fish/fish_history
 config/configstore
 vim/.netrwhist
 config/hub
+config/fish/fishd.*
