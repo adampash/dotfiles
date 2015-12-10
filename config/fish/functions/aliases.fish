@@ -7,7 +7,7 @@ alias labs "cd ~/code/labs"
 alias code "cd ~/code"
 
 function ls
-  command ls -lahG $argv
+  command ls -lhG $argv
 end
 
 function new_interactive
@@ -25,4 +25,8 @@ function kill_with_port
   set pid (sudo lsof -t -i:$argv)
   echo "Killing process $pid"
   kill $pid
+end
+
+function mp3
+  youtube-dl --extract-audio --audio-format mp3 $argv
 end
