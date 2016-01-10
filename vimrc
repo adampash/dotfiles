@@ -181,6 +181,12 @@ inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 " Remove trailing whitespace on save for ruby files.
 au BufWritePre *.rb :%s/\s\+$//e
 
+" auto turn on rainbow parens
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
