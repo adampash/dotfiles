@@ -30,3 +30,7 @@ end
 function mp3
   youtube-dl --extract-audio --audio-format mp3 $argv
 end
+
+function dokku
+  command ssh dokku dokku $argv
+end
