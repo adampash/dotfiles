@@ -619,19 +619,22 @@ function fish_prompt
   set_color yellow
   echo -n (prompt_pwd)
   set_color $gray
-  __fish_git_prompt " ♆ %s "
+  __fish_git_prompt " ♆ %s"
   # echo -n (__fish_git_prompt_show_informative_status)
   # red
   set_color $red
   # blue
-  set_color $blue
-  echo -n " ❯"
-  # gray
-  set_color $gray
-  echo -n "❯"
-  # red
+  # set_color $blue
+  # echo -n " ❯"
+  # # gray
+  # set_color $gray
+  # echo -n "❯"
+  # # red
+  # set_color $red
+  # echo -n "❯ "
   set_color $red
-  echo -n "❯ "
+  set_color $gray
+  echo -n " λ "
 end
 
 
