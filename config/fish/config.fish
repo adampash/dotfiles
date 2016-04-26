@@ -13,3 +13,5 @@ set PATH $PATH /Users/aop/.rvm/gems/ruby-2.2.0/bin /Users/aop/.rvm/gems/ruby-2.2
 
 
 test -s /Users/aop/.nvm-fish/nvm.fish; and source /Users/aop/.nvm-fish/nvm.fish
+
+eval (direnv hook fish)
