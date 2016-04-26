@@ -34,3 +34,7 @@ end
 function dokku
   command ssh dokku dokku $argv
 end
+
+function work_dokku
+  command ssh work_dokku dokku $argv
+end
