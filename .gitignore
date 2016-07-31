@@ -9,3 +9,10 @@ config/hub
 config/xbuild
 config/stetic
 config/direnv
+atom/*
+!atom/config.cson
+!atom/init.coffee
+!atom/keymap.cson
+!atom/snippets.cson
+!atom/projects.cson
+!atom/styles.less

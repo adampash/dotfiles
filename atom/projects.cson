@@ -1,0 +1,5 @@
+clojuretestwebapp:
+  title: "Clojure Test Webapp"
+  paths: [
+    "/Users/aop/code/labs/learn/webapp"
+  ]

@@ -1,0 +1,260 @@
+"*":
+  Hydrogen:
+    grammarToKernel: "{\"ruby\":\"Ruby 2.2.0\"}"
+    kernelspec: "{\"kernelspecs\":{\"nodejs\":{\"resources_dir\":\"/Users/aop/.ipython/kernels/nodejs\",\"spec\":{\"language\":\"javascript\",\"display_name\":\"NodeJS\",\"env\":{},\"argv\":[\"node\",\"/private/tmp/package/build/run.js\",\"{connection_file}\"]}},\"babel\":{\"resources_dir\":\"/Users/aop/Library/Jupyter/kernels/babel\",\"spec\":{\"language\":\"babel\",\"display_name\":\"Babel (Node.js)\",\"env\":{},\"argv\":[\"/usr/local/Cellar/iojs/3.3.1/bin/iojs\",\"/usr/local/lib/node_modules/jp-babel/lib/kernel.js\",\"{connection_file}\",\"--protocol=5.0\"]}},\"coffeescript\":{\"resources_dir\":\"/Users/aop/Library/Jupyter/kernels/coffeescript\",\"spec\":{\"language\":\"coffeescript\",\"display_name\":\"CoffeeScript (Node.js)\",\"env\":{},\"argv\":[\"/usr/local/Cellar/iojs/3.3.1/bin/iojs\",\"/usr/local/lib/node_modules/jp-coffeescript/lib/kernel.js\",\"{connection_file}\",\"--protocol=5.0\"]}},\"ielixir\":{\"resources_dir\":\"/Users/aop/.ipython/kernels/ielixir\",\"spec\":{\"language\":\"Elixir\",\"display_name\":\"ielixir\",\"env\":{},\"argv\":[\"/Users/aop/code/IElixir/start_script.sh\",\"{connection_file}\"]}},\"clojure\":{\"resources_dir\":\"/Users/aop/Library/Jupyter/kernels/clojure\",\"spec\":{\"language\":\"clojure\",\"display_name\":\"Clojure\",\"env\":{},\"argv\":[\"/Users/aop/.ipython/kernels/clojure/ipython-clojure\",\"{connection_file}\"]}},\"ruby\":{\"resources_dir\":\"/Users/aop/.ipython/kernels/ruby\",\"spec\":{\"language\":\"ruby\",\"display_name\":\"Ruby 2.2.0\",\"env\":{},\"argv\":[\"/Users/aop/.rvm/gems/ruby-2.2.0/bin/iruby\",\"kernel\",\"{connection_file}\"]}},\"python2\":{\"resources_dir\":\"/usr/local/lib/python2.7/site-packages/ipykernel/resources\",\"spec\":{\"language\":\"python\",\"display_name\":\"Python 2\",\"env\":{},\"argv\":[\"/usr/local/opt/python/bin/python2.7\",\"-m\",\"ipykernel\",\"-f\",\"{connection_file}\"]}}}}"
+    languageMappings: "{\"Javascript\": \"babel\", \"Javascript by SubtleGradient\": \"babel\", \"Javascript (jsx)\": \"babel\", \"Javascript with JSX\": \"babel\", \"ruby on rails\": \"ruby\", \"Ruby on Rails\": \"ruby\", \"Ruby (Rails)\": \"ruby\"}"
+  Repl:
+    node: "/usr/local/bin/node"
+  "api-docs":
+    _theme: "Dark"
+    clojure: false
+    coffeescript: true
+    elixir: true
+    git: true
+    react: true
+    react_native: true
+  "atom-beautify":
+    general:
+      _analyticsUserId: "6285a391-7464-40f8-bffb-5cca6156afef"
+    js:
+      beautify_on_save: true
+      break_chained_methods: true
+      default_beautifier: "Pretty Diff"
+      end_with_comma: true
+      indent_size: 2
+    json:
+      beautify_on_save: true
+      indent_size: 2
+    jsx:
+      beautify_on_save: true
+      end_with_comma: true
+      indent_size: 2
+      wrap_line_length: 80
+    ruby:
+      beautify_on_save: true
+      indent_size: 2
+      rubocop_path: "/Users/aop/.rvm/gems/ruby-2.3.0/bin/rubocop"
+    scss:
+      beautify_on_save: true
+      indent_size: 2
+      newline_between_rules: true
+      no_lead_zero: true
+      predefinedConfig: "zen"
+      preserve_newlines: true
+  "atom-clock":
+    dateFormat: "h:mm a"
+    showClockIcon: true
+  "atom-metaweather":
+    autoLocation: true
+    cycleDates: true
+    location: 11217
+    locationName: "Brooklyn"
+    position: "left"
+    showWind: true
+    temperatureMeasure: "F"
+    updateTime: 15
+  "autocomplete-elixir":
+    elixirPath: "/usr/local/bin/elixir"
+    erlangHome: "/usr/local/bin"
+  core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "hyperclick"
+      "you-complete-me"
+      "linter-clojure"
+      "nrepl"
+      "seeing-is-believing"
+      "script"
+      "tab-switcher"
+      "clock"
+      "project-manager"
+      "atom-metaweather"
+    ]
+    packagesWithKeymapsDisabled: [
+      "api-docs"
+    ]
+  editor:
+    backUpBeforeSaving: true
+    invisibles: {}
+    nonWordCharacters: "(){}[]\\\"',;<>~#$%^&*|+=`…"
+    showIndentGuide: true
+    showInvisibles: true
+    softWrapAtPreferredLineLength: true
+    tabType: "soft"
+    zoomFontWhenCtrlScrolling: true
+  emmet: {}
+  "exception-reporting":
+    userId: "c66bb0f0-ddb6-38e1-33ad-91fcb07fb8bb"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  "fuzzy-finder": {}
+  "git-plus": {}
+  iex:
+    iexExecutablePath: "source .envrc; iex"
+  linter:
+    errorPanelHeight: 22
+    gutterPosition: "Left"
+    ignoreVCSIgnoredFiles: false
+    lintOnFly: false
+  "linter-clojure": {}
+  "linter-elixir-credo": {}
+  "linter-elixirc":
+    elixircPath: "/usr/local/bin/elixirc"
+  "linter-eslint":
+    globalNodePath: "/usr/local"
+    useGlobalEslint: true
+  "linter-jshint":
+    lintInlineJavaScript: true
+  "linter-rails-best-practices":
+    executablePath: "/Users/aop/.rvm/gems/ruby-2.2.0/bin/rails_best_practices"
+  "linter-sass-lint":
+    configFile: "~/.sass-lint.yml"
+  minimap:
+    plugins:
+      linter: true
+      linterDecorationsZIndex: 0
+      "minimap-autohide": true
+      "minimap-autohideDecorationsZIndex": 0
+      "minimap-hide": true
+      "minimap-hideDecorationsZIndex": 0
+  nuclide:
+    "nuclide-arcanist": {}
+    "nuclide-buck-files": {}
+    "nuclide-debugger-hhvm": {}
+    "nuclide-flow": {}
+    "nuclide-format-js": {}
+    "nuclide-health": {}
+    "nuclide-home":
+      showHome: false
+    "nuclide-ocaml": {}
+  "one-dark-ui": {}
+  "proto-repl":
+    autoPrettyPrint: true
+    autoScroll: false
+    displayHelpText: false
+    leinPath: "/usr/local/bin/lein"
+    showInlineResults: true
+  react:
+    detectReactFilePattern: "/^import.*from 'react'"
+    enabledForAllJavascriptFiles: true
+  "relative-numbers": {}
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+  "terminal-plus":
+    ansiColors:
+      normal:
+        black:
+          red: 0
+          green: 40
+          blue: 49
+          alpha: 1
+        blue:
+          red: 33
+          green: 118
+          blue: 199
+          alpha: 1
+        cyan:
+          red: 37
+          green: 146
+          blue: 134
+          alpha: 1
+        green:
+          red: 115
+          green: 138
+          blue: 5
+          alpha: 1
+        magenta:
+          red: 198
+          green: 28
+          blue: 111
+          alpha: 1
+        red:
+          red: 209
+          green: 28
+          blue: 36
+          alpha: 1
+        white:
+          red: 234
+          green: 227
+          blue: 203
+          alpha: 1
+        yellow:
+          red: 165
+          green: 119
+          blue: 6
+          alpha: 1
+    core: {}
+    style:
+      animationSpeed: 20
+      defaultPanelHeight: "100%"
+      fontFamily: "Source Code Pro for Powerline"
+      fontSize: "16pt"
+    toggles:
+      autoClose: true
+      cursorBlink: false
+  "test-jumper":
+    locations: [
+      "lib|spec"
+      "app|spec"
+      "lib|test"
+    ]
+    "spec-announcer": "%s_test"
+    spec_to_the_right: true
+    "x-create-files":
+      enabled: true
+      "source-template": "# %s\\n#\\nCool stuff"
+  "tool-bar":
+    position: "Right"
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "vim-mode-plus":
+    flashOnSearch: false
+    incrementalSearch: true
+    setCursorToStartOfChangeOnUndoRedo: true
+    showHoverOnOperate: true
+    stayOnYank: true
+    useSmartcaseForSearch: true
+  welcome:
+    showOnStartup: false
+  "you-complete-me": {}
+".attribute-values.js.jsx.source":
+  editor:
+    nonWordCharacters: "(){}[]\\\"',;<>~#$%^&*|+=`…"
+".diff.source":
+  editor:
+    nonWordCharacters: "(){}[]\\\"',;<>~#$%^&*|+=`…"
+".elixir.html.text":
+  editor:
+    nonWordCharacters: "(){}[]\\\"',;<>~#$%^&*|+=`…"
+".elixir.source":
+  editor:
+    nonWordCharacters: "(){}[]\\\"',;<>~#$%^&*|+=`…"
+".elixir.text":
+  editor:
+    autoIndentOnPaste: true
+    nonWordCharacters: "(){}[]\\\"',;<>~#$%^&*|+=`…"
+".js.jsx.react.source":
+  editor:
+    nonWordCharacters: "(){}[]\\\"',;<>~#$%^&*|+=`…"
+    showInvisibles: true
+    softWrap: true
+".js.jsx.source":
+  editor:
+    nonWordCharacters: "(){}[]\\\"',;<>~#$%^&*|+=`…"
+    showInvisibles: true
+".js.source.subtlegradient":
+  editor:
+    nonWordCharacters: "(){}[]\\\"',;<>~#$%^&*|+=`…"
