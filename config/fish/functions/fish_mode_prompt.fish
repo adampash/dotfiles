@@ -1,5 +1,5 @@
 function fish_mode_prompt
-  if set -q __fish_vi_mode
+  if set -q __fish_vi_key_bindings
     switch $fish_bind_mode
       case default
         set_color --bold --background normal green
