@@ -11,6 +11,9 @@ set PATH $PATH /Users/aop/.rvm/gems/ruby-2.2.0/bin /Users/aop/.rvm/gems/ruby-2.2
 
 # rvm default
 
+# rbenv
+status --is-interactive; and . (rbenv init -|psub)
+
 
 test -s /Users/ap/.nvm-fish/nvm.fish; and source /Users/ap/.nvm-fish/nvm.fish
 
