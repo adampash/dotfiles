@@ -156,45 +156,45 @@
     ansiColors:
       normal:
         black:
-          red: 0
-          green: 40
+          alpha: 1
           blue: 49
-          alpha: 1
+          green: 40
+          red: 0
         blue:
-          red: 33
-          green: 118
+          alpha: 1
           blue: 199
-          alpha: 1
+          green: 118
+          red: 33
         cyan:
-          red: 37
-          green: 146
+          alpha: 1
           blue: 134
-          alpha: 1
+          green: 146
+          red: 37
         green:
-          red: 115
-          green: 138
+          alpha: 1
           blue: 5
-          alpha: 1
+          green: 138
+          red: 115
         magenta:
-          red: 198
-          green: 28
+          alpha: 1
           blue: 111
-          alpha: 1
-        red:
-          red: 209
           green: 28
+          red: 198
+        red:
+          alpha: 1
           blue: 36
-          alpha: 1
+          green: 28
+          red: 209
         white:
-          red: 234
-          green: 227
+          alpha: 1
           blue: 203
-          alpha: 1
+          green: 227
+          red: 234
         yellow:
-          red: 165
-          green: 119
-          blue: 6
           alpha: 1
+          blue: 6
+          green: 119
+          red: 165
     core: {}
     style:
       animationSpeed: 20
