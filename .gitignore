@@ -14,5 +14,6 @@ atom/*
 !atom/init.coffee
 !atom/keymap.cson
 !atom/snippets.cson
+!atom/packages.cson
 !atom/projects.cson
 !atom/styles.less
