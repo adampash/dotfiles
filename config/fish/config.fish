@@ -7,15 +7,16 @@ source "$HOME/.config/fish/functions/git.fish"
 
 # set -gx SSL_CERT_FILE /usr/local/heroku/data/cacert.pem
 
-set PATH $PATH /Users/aop/.rvm/gems/ruby-2.2.0/bin /Users/aop/.rvm/gems/ruby-2.2.0@global/bin /Users/aop/.rvm/rubies/ruby-2.2.0/bin /usr/local/nvm/versions/node/v4.2.1/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/MacGPG2/bin /Users/aop/.rvm/bin /usr/bin /Users/aop/.rvm/bin /Applications/Postgres.app/Contents/Versions/9.4/bin
+set PATH $PATH /usr/local/nvm/versions/node/v4.2.1/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/MacGPG2/bin /usr/bin /Applications/Postgres.app/Contents/Versions/9.4/bin
 
-# rvm default
-
-# rbenv
+# rbenv ruby version manager
 status --is-interactive; and . (rbenv init -|psub)
 
-
+# nvm node version manager
 test -s /Users/ap/.nvm-fish/nvm.fish; and source /Users/ap/.nvm-fish/nvm.fish
+
+# kiex elixir version manager
+test -s "$HOME/.kiex/scripts/kiex"; and bass source "$HOME/.kiex/scripts/kiex"
 
 eval (direnv hook fish)
 
