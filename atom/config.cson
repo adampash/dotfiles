@@ -78,7 +78,6 @@
       "tab-switcher"
       "clock"
       "project-manager"
-      "atom-metaweather"
     ]
     packagesWithKeymapsDisabled: [
       "api-docs"
