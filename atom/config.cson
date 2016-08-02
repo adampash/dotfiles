@@ -1,8 +1,55 @@
 "*":
   Hydrogen:
-    grammarToKernel: "{\"ruby\":\"Ruby 2.2.0\"}"
-    kernelspec: "{\"kernelspecs\":{\"nodejs\":{\"resources_dir\":\"/Users/aop/.ipython/kernels/nodejs\",\"spec\":{\"language\":\"javascript\",\"display_name\":\"NodeJS\",\"env\":{},\"argv\":[\"node\",\"/private/tmp/package/build/run.js\",\"{connection_file}\"]}},\"babel\":{\"resources_dir\":\"/Users/aop/Library/Jupyter/kernels/babel\",\"spec\":{\"language\":\"babel\",\"display_name\":\"Babel (Node.js)\",\"env\":{},\"argv\":[\"/usr/local/Cellar/iojs/3.3.1/bin/iojs\",\"/usr/local/lib/node_modules/jp-babel/lib/kernel.js\",\"{connection_file}\",\"--protocol=5.0\"]}},\"coffeescript\":{\"resources_dir\":\"/Users/aop/Library/Jupyter/kernels/coffeescript\",\"spec\":{\"language\":\"coffeescript\",\"display_name\":\"CoffeeScript (Node.js)\",\"env\":{},\"argv\":[\"/usr/local/Cellar/iojs/3.3.1/bin/iojs\",\"/usr/local/lib/node_modules/jp-coffeescript/lib/kernel.js\",\"{connection_file}\",\"--protocol=5.0\"]}},\"ielixir\":{\"resources_dir\":\"/Users/aop/.ipython/kernels/ielixir\",\"spec\":{\"language\":\"Elixir\",\"display_name\":\"ielixir\",\"env\":{},\"argv\":[\"/Users/aop/code/IElixir/start_script.sh\",\"{connection_file}\"]}},\"clojure\":{\"resources_dir\":\"/Users/aop/Library/Jupyter/kernels/clojure\",\"spec\":{\"language\":\"clojure\",\"display_name\":\"Clojure\",\"env\":{},\"argv\":[\"/Users/aop/.ipython/kernels/clojure/ipython-clojure\",\"{connection_file}\"]}},\"ruby\":{\"resources_dir\":\"/Users/aop/.ipython/kernels/ruby\",\"spec\":{\"language\":\"ruby\",\"display_name\":\"Ruby 2.2.0\",\"env\":{},\"argv\":[\"/Users/aop/.rvm/gems/ruby-2.2.0/bin/iruby\",\"kernel\",\"{connection_file}\"]}},\"python2\":{\"resources_dir\":\"/usr/local/lib/python2.7/site-packages/ipykernel/resources\",\"spec\":{\"language\":\"python\",\"display_name\":\"Python 2\",\"env\":{},\"argv\":[\"/usr/local/opt/python/bin/python2.7\",\"-m\",\"ipykernel\",\"-f\",\"{connection_file}\"]}}}}"
-    languageMappings: "{\"Javascript\": \"babel\", \"Javascript by SubtleGradient\": \"babel\", \"Javascript (jsx)\": \"babel\", \"Javascript with JSX\": \"babel\", \"ruby on rails\": \"ruby\", \"Ruby on Rails\": \"ruby\", \"Ruby (Rails)\": \"ruby\"}"
+    grammarToKernel: "{\"JavaScript with JSX\": \"Babel (Node.js)\"}"
+    kernelNotifications: "error"
+    kernelspec: '''
+      {
+        "kernelspecs": {
+          "babel": {
+            "resource_dir": "/Users/ap/Library/Jupyter/kernels/babel", 
+            "spec": {
+              "language": "babel", 
+              "display_name": "Babel (Node.js)", 
+              "env": {}, 
+              "argv": [
+                "/Users/ap/.nvm/versions/node/v6.3.1/bin/node", 
+                "/Users/ap/.nvm/versions/node/v6.3.1/lib/node_modules/jp-babel/lib/kernel.js", 
+                "{connection_file}", 
+                "--protocol=5.0"
+              ]
+            }
+          }, 
+          "ielixir": {
+            "resource_dir": "/Users/ap/Library/Jupyter/kernels/ielixir", 
+            "spec": {
+              "language": "Elixir", 
+              "display_name": "ielixir", 
+              "env": {}, 
+              "argv": [
+                "/Users/ap/.hydrogen/IElixir/start_script.sh", 
+                "{connection_file}"
+              ]
+            }
+          }, 
+          "python2": {
+            "resource_dir": "/usr/local/lib/python2.7/site-packages/ipykernel/resources", 
+            "spec": {
+              "language": "python", 
+              "display_name": "Python 2", 
+              "env": {}, 
+              "argv": [
+                "/usr/local/opt/python/bin/python2.7", 
+                "-m", 
+                "ipykernel", 
+                "-f", 
+                "{connection_file}"
+              ]
+            }
+          }
+        }
+      }
+      
+    '''
   Repl:
     node: "/usr/local/bin/node"
   "api-docs":
@@ -54,7 +101,6 @@
     temperatureMeasure: "F"
     updateTime: 15
   "autocomplete-elixir":
-    elixirPath: "/usr/local/bin/elixir"
     erlangHome: "/usr/local/bin"
   core:
     customFileTypes:
@@ -78,6 +124,8 @@
       "tab-switcher"
       "clock"
       "project-manager"
+      "terminal-plus"
+      "linter-eslint"
     ]
     packagesWithKeymapsDisabled: [
       "api-docs"
@@ -107,8 +155,7 @@
     lintOnFly: false
   "linter-clojure": {}
   "linter-elixir-credo": {}
-  "linter-elixirc":
-    elixircPath: "/usr/local/bin/elixirc"
+  "linter-elixirc": {}
   "linter-eslint":
     globalNodePath: "/usr/local"
     useGlobalEslint: true
@@ -137,6 +184,8 @@
       showHome: false
     "nuclide-ocaml": {}
   "one-dark-ui": {}
+  "package-sync":
+    createOnChange: true
   "proto-repl":
     autoPrettyPrint: true
     autoScroll: false
@@ -230,6 +279,9 @@
     showOnStartup: false
   "you-complete-me": {}
 ".attribute-values.js.jsx.source":
+  editor:
+    nonWordCharacters: "(){}[]\\\"',;<>~#$%^&*|+=`…"
+".breakpoints.hydrogen":
   editor:
     nonWordCharacters: "(){}[]\\\"',;<>~#$%^&*|+=`…"
 ".diff.source":

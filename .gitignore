@@ -17,3 +17,4 @@ atom/*
 !atom/packages.cson
 !atom/projects.cson
 !atom/styles.less
+npm-debug.log
