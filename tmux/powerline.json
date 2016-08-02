@@ -1,4 +1,4 @@
-// move this file to /usr/local/lib/python2.7/site-packages/powerline/config_files/themes/tmux
+// move this file to /usr/local/lib/python2.7/site-packages/powerline/config_files/themes/tmux, overwrite default.json, delete this comment, and reload tmux (ctrl+a, shift+r)
 {
   "segments": {
     "right": [
