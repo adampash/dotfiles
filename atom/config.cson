@@ -1,6 +1,7 @@
 "*":
   Hydrogen:
-    grammarToKernel: "{\"JavaScript with JSX\": \"Babel (Node.js)\"}"
+    grammarToKernel: "{\"javascript with jsx\": \"Babel (Node.js)\", \"javascript\": \"Babel (Node.js)\"}"
+    kernelMappings: "{\"javascript with jsx\": \"Babel (Node.js)\", \"javascript\": \"Babel (Node.js)\"}"
     kernelNotifications: "error"
     kernelspec: '''
       {
@@ -26,7 +27,7 @@
               "display_name": "ielixir", 
               "env": {}, 
               "argv": [
-                "/Users/ap/.hydrogen/IElixir/start_script.sh", 
+                "/Users/ap/.ipython/code/IElixir/start_script.sh", 
                 "{connection_file}"
               ]
             }
@@ -64,7 +65,6 @@
     general:
       _analyticsUserId: "6285a391-7464-40f8-bffb-5cca6156afef"
     js:
-      beautify_on_save: true
       break_chained_methods: true
       default_beautifier: "Pretty Diff"
       end_with_comma: true
@@ -266,8 +266,7 @@
       "source-template": "# %s\\n#\\nCool stuff"
   "tool-bar":
     position: "Right"
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   "vim-mode-plus":
     flashOnSearch: false
     incrementalSearch: true
