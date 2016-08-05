@@ -7,7 +7,7 @@ source "$HOME/.config/fish/functions/git.fish"
 
 # set -gx SSL_CERT_FILE /usr/local/heroku/data/cacert.pem
 
-set PATH $PATH /usr/local/nvm/versions/node/v4.2.1/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/MacGPG2/bin /usr/bin /Applications/Postgres.app/Contents/Versions/9.4/bin
+set PATH $PATH /usr/local/nvm/versions/node/v4.2.1/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin /usr/local/MacGPG2/bin /usr/bin /Applications/Postgres.app/Contents/Versions/9.5/bin
 
 # rbenv ruby version manager
 status --is-interactive; and . (rbenv init -|psub)
