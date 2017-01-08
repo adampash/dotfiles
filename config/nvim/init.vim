@@ -3,15 +3,6 @@ let g:mapleader = ","
 set encoding=utf-8
 set shell=/bin/zsh
 
-" Sane tabs
-" - Two spaces wide
-set tabstop=2
-set softtabstop=2
-" - Expand them all
-set expandtab
-" - Indent by 2 spaces by default
-set shiftwidth=2
-
 " Turn off mouse clicking
 " set mouse=""
 
@@ -33,6 +24,8 @@ set relativenumber
   nnoremap <space> :
   " Switch between the last two files
   nnoremap <leader><leader> <c-^>
+  " Indent file
+  map <leader>i ggVG=<c-o><c-o>
 
 
 " Highlight search results
@@ -92,7 +85,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'scrooloose/nerdtree'
     " Toggle
     map <C-n> :NERDTreeToggle<cr>
-  " Plug 'airblade/vim-gitgutter'
+  Plug 'airblade/vim-gitgutter'
   Plug 'rking/ag.vim'
 
   " Comment shortcuts
@@ -112,6 +105,12 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'ludovicchabant/vim-gutentags'
     let g:gutentags_cache_dir = '~/.tags_cache'
 
+  " Change cursor to blinking line when in insert mode
+  Plug 'jszakmeister/vim-togglecursor'
+
+  " Reveal file in finder
+  Plug 'henrik/vim-reveal-in-finder'
+
 "  Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 "    " Mapping selecting mappings
 "    nnoremap <C-p> :Files<CR>
@@ -124,3 +123,15 @@ call plug#end()
 set background=dark
 syntax on
 colorscheme onedark
+
+" Sane tabs
+" - Two spaces wide
+set tabstop=2
+set softtabstop=2
+" - Expand them all
+set expandtab
+" - Indent by 2 spaces by default
+set shiftwidth=2
+
+
+
