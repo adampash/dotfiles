@@ -76,6 +76,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-fugitive'
 
   " Integrate elixir with vim
+  Plug 'elixir-lang/vim-elixir'
   Plug 'slashmili/alchemist.vim'
     map <C-i> K
   " Format elixir docs nicely
