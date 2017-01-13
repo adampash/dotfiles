@@ -1,0 +1,49 @@
+snippet defmod "Boilerplate for a simple module" b
+defmodule ${1:ModuleName} do
+	$0
+end
+endsnippet
+
+snippet def "Boilerplate for a function" b
+def ${1:name}(${2:opts}) do
+	$0
+end
+endsnippet
+
+snippet gs "Boilerplate for a GenServer" b
+defmodule ${1:ModuleName} do
+	use GenServer
+
+  ## Client API
+
+	def start_link(${2:opts \\\ []}) do
+		GenServer.start_link(__MODULE__, opts, __MODULE__)
+	end
+
+  ## Server callbacks
+
+	def init(opts) do
+		$0
+		{:ok, opts}
+	end
+end
+endsnippet
+
+
+snippet hc "Boilerplate for handle_call" b
+def handle_call(${1::message}, ${2:_from}, ${3:state}) do
+	$0
+	{:reply, state, state}
+end
+endsnippet
+
+snippet test "Boilerplate for test"
+defmodule ${1:ModuleName}Test do
+  use ExUnit.Case
+  doctest $1
+
+  test "${2:the truth}" do
+    assert 1 + 1 == 2$0
+  end
+end
+endsnippet

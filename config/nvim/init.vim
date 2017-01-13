@@ -4,7 +4,7 @@ set encoding=utf-8
 set shell=/bin/zsh
 
 " Turn off mouse clicking
-" set mouse=""
+set mouse=""
 
 set number " line numbering
 set relativenumber
@@ -26,6 +26,15 @@ set relativenumber
   nnoremap <leader><leader> <c-^>
   " Indent file
   map <leader>i ggVG=<c-o><c-o>
+  "Move around splits with <c-hjkl>
+  nnoremap <c-j> <c-w>j
+  nnoremap <c-k> <c-w>k
+  nnoremap <c-h> <c-w>h
+  nnoremap <c-l> <c-w>l
+  " Run cli command
+  map <leader>c :!
+  " Format json
+  map <leader>j :!cat % \| json_pp \| tee %<cr><cr>
 
 
 " Highlight search results
@@ -65,7 +74,6 @@ call plug#begin('~/.config/nvim/plugged')
     " Run Neomake when I save any buffer
     autocmd! BufWritePost * Neomake
     let g:neomake_javascript_enabled_makers = ['eslint']
-
     " Use local eslint for neomake
     Plug 'jaawerth/neomake-local-eslint-first'
 
@@ -112,11 +120,21 @@ call plug#begin('~/.config/nvim/plugged')
   " Reveal file in finder
   Plug 'henrik/vim-reveal-in-finder'
 
-"  Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-"    " Mapping selecting mappings
-"    nnoremap <C-p> :Files<CR>
+  " Track the engine.
+  Plug 'SirVer/ultisnips'
+  " Snippets are separated from the engine. Add this if you want them:
+  Plug 'honza/vim-snippets'
+    let g:UltiSnipsExpandTrigger="<c-e>"
+    let g:UltiSnipsListSnippets="<c-tab>"
+    " :UltiSnipsEdit splits the window.
+    let g:UltiSnipsEditSplit="vertical"
+    let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
-  " Plug 'junegunn/fzf.vim'
+
+
+  " Snippets are separated from the engine. Add this if you want them:
+  Plug 'honza/vim-snippets'
+
 
 call plug#end()
 
