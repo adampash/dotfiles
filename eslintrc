@@ -15,7 +15,6 @@
     "rules": {
       "strict": 0,
       "quotes": 0,
-      "semi": [ 2, "never" ],
       "no-unused-vars": 0,
       "camelcase": 0,
       "no-underscore-dangle": 0

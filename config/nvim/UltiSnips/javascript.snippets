@@ -1,0 +1,34 @@
+snippet rc "Boilerplate for a basic React component" b
+import React, { Component } from 'react'
+
+class ${1:ComponentName} extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+
+  render() {
+    return (
+      <div className="$1">
+        { "$1 component" }
+      </div>
+    )
+  }
+}
+
+export default $1
+endsnippet
+
+snippet rp "Boilerplate for a pure React component" b
+import React, { Component } from 'react'
+
+const ${1:ComponentName} = (props) => {
+  return (
+    <div className="$1">
+    { "$1 component" }
+    </div>
+  )
+}
+
+export default $1
+endsnippet

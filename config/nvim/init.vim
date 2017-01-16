@@ -153,4 +153,5 @@ set expandtab
 set shiftwidth=2
 
 
-
+" Javascript
+autocmd FileType javascript set formatprg=prettier\ --stdin
