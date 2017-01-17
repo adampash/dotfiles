@@ -8,6 +8,7 @@ class ${1:ComponentName} extends Component {
   }
 
   render() {
+		$0
     return (
       <div className="$1">
         { "$1 component" }
@@ -23,6 +24,7 @@ snippet rp "Boilerplate for a pure React component" b
 import React, { Component } from 'react'
 
 const ${1:ComponentName} = (props) => {
+	$0
   return (
     <div className="$1">
     { "$1 component" }
@@ -31,4 +33,22 @@ const ${1:ComponentName} = (props) => {
 }
 
 export default $1
+endsnippet
+
+snippet ii "magic import" b
+import `!p
+def formatName(name):
+	parts = name.split('-')
+	func = lambda s: s[:1].lower() + s[1:] if s else ''
+	return func("".join(map((lambda x: x.capitalize()), parts)))
+
+def formatVariableName(path):
+  parts = path.split('/')
+  module = parts[0]
+  if len(parts) > 1:
+    return formatName(parts[-1])
+  else:
+    return re.sub(r'[_\-]', '', module.title())
+snip.rv = formatVariableName(t[1])
+` from '${1}';$0
 endsnippet

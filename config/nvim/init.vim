@@ -35,6 +35,7 @@ set relativenumber
   map <leader>c :!
   " Format json
   map <leader>j :!cat % \| json_pp \| tee %<cr><cr>
+  map <leader>f gggqG<C-o><C-o>
 
 
 " Highlight search results
