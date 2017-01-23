@@ -3,6 +3,7 @@ vim/bundle/
 tmux/plugins/
 tmux/resurrect/
 config/fish/fish_history
+config/nvim/plugged
 config/configstore
 vim/.netrwhist
 config/hub
