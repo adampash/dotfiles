@@ -1,1 +1,1 @@
-/Users/ap/.config/fisherman/bass/functions/__bass.py
+/Users/aop/.config/fisherman/functions/__bass.py
