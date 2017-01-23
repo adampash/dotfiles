@@ -35,7 +35,12 @@ set relativenumber
   map <leader>c :!
   " Format json
   map <leader>j :!cat % \| json_pp \| tee %<cr><cr>
+  " Format javascript with prettier
   map <leader>f gggqG<C-o><C-o>
+  " Open scratch file
+  map <leader>s :e scratch.exs<cr>
+  " Run scratch file
+  map <leader>r :!elixir scratch.exs<cr>
 
 
 " Highlight search results
@@ -132,9 +137,15 @@ call plug#begin('~/.config/nvim/plugged')
     let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 
-
   " Snippets are separated from the engine. Add this if you want them:
   Plug 'honza/vim-snippets'
+
+  " Vim instant markdown
+  " Also requires: npm -g install instant-markdown-d
+  Plug 'suan/vim-instant-markdown'
+    " Requires this is turned on
+    filetype plugin on
+
 
 
 call plug#end()
