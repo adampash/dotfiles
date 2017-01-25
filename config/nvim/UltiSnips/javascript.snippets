@@ -52,3 +52,39 @@ def formatVariableName(path):
 snip.rv = formatVariableName(t[1])
 ` from '${1}';$0
 endsnippet
+
+snippet test "Boilerplate for jest/jasmine tests" b
+import assert from 'assert';
+
+describe('${1:functionName}', () => {
+	it('${2:tests truth}', () => {
+		assert.equal(true, true);$0
+	});
+});
+endsnippet
+
+snippet describe "Boilerplate for describe block" b
+describe('${1:functionName}', () => {
+	it('${2:tests truth}', () => {
+		assert.equal(true, true);$0
+	});
+});
+endsnippet
+
+snippet it "Boilerplate for it block" b
+it('${1:tests truth}', () => {
+	assert.equal(true, true);$0
+});
+endsnippet
+
+snippet mod "Boilerplate for es6 module" b
+const ${1:functionName} = (${2:args}) => {
+	$0
+};
+
+export default $1;
+endsnippet
+
+snippet log "console.log" b
+console.log($1);
+endsnippet
