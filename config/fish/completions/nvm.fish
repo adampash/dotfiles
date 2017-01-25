@@ -1,0 +1,1 @@
+/Users/aop/.config/fisherman/nvm/completions/nvm.fish

@@ -33,5 +33,5 @@ SET fish_pager_color_description:555\x1eyellow
 SET fish_pager_color_prefix:cyan
 SET fish_pager_color_progress:cyan
 SET fish_user_paths:/Users/aop/\x2efzf/bin
-SET fisher_dependency_count:virtualfish
+SET fisher_dependency_count:virtualfish\x1ebass\x1envm\x1emenu\x1eget_file_age\x1eawait\x1elast_job_id\x1efnm
 SET fisher_last_update:1455387534
