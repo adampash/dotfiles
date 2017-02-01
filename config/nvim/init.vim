@@ -6,6 +6,11 @@ set shell=/bin/zsh
 " Turn off mouse clicking
 set mouse=""
 
+" Save undo history
+set undofile
+set hidden
+set undodir=~/.vimundo/
+
 set number " line numbering
 set relativenumber
 " autocmd InsertEnter * :set number
@@ -33,6 +38,8 @@ set relativenumber
   nnoremap <c-l> <c-w>l
   " Run cli command
   map <leader>c :!
+  " mkdir
+  map <leader>m :!mkdir 
   " Format json
   map <leader>j :!cat % \| json_pp \| tee %<cr><cr>
   " Format javascript with prettier
@@ -147,6 +154,8 @@ call plug#begin('~/.config/nvim/plugged')
     filetype plugin on
 
 
+  " Restore cursor position
+  Plug 'dietsche/vim-lastplace'
 
 call plug#end()
 
