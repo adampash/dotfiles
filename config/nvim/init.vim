@@ -82,13 +82,8 @@ call plug#begin('~/.config/nvim/plugged')
   " Dark Theme
   Plug 'joshdick/onedark.vim'
 
-  " Execute code checks, find mistakes, in the background
-  Plug 'neomake/neomake'
-    " Run Neomake when I save any buffer
-    autocmd! BufWritePost * Neomake
-    let g:neomake_javascript_enabled_makers = ['eslint']
-    " Use local eslint for neomake
-    Plug 'jaawerth/neomake-local-eslint-first'
+  " Linter: Execute code checks, find mistakes, in the background
+  Plug 'w0rp/ale'
 
   " Friendly navigation
   Plug 'christoomey/vim-tmux-navigator'
