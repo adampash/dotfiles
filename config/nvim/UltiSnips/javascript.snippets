@@ -77,12 +77,43 @@ it('${1:tests truth}', () => {
 });
 endsnippet
 
+
+global !p
+def camel_to_dash(name):
+	s1 = re.sub('(.)([A-Z][a-z]+)', r'\1-\2', name)
+	return re.sub('([a-z0-9])([A-Z])', r'\1-\2', s1).lower()
+
+def args_to_const(args):
+	if args == '':
+		return ''
+	else:
+		return "\n    ".join(map(lambda x: "const {} = '';".format(x), args.split(', ')))
+endglobal
+
 snippet mod "Boilerplate for es6 module" b
 const ${1:functionName} = (${2:args}) => {
 	$0
 };
 
 export default $1;
+
+// Place below into ./`!p
+snip.rv = camel_to_dash(t[1])
+`.test.js
+import assert from 'assert';
+
+import $1 from '`!p
+snip.rv = camel_to_dash(t[1])
+`.js';
+
+describe('$1', () => {
+	it('tests $1($2)', () => {
+		`!p
+snip.rv = args_to_const(t[2])
+		`
+		assert.equal($1($2), true);$0
+	});
+});
 endsnippet
 
 snippet log "console.log" b
