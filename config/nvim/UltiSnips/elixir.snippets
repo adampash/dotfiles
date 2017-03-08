@@ -17,7 +17,7 @@ defmodule ${1:ModuleName} do
   ## Client API
 
 	def start_link(${2:opts \\\ []}) do
-		GenServer.start_link(__MODULE__, opts, __MODULE__)
+		GenServer.start_link(__MODULE__, opts, name: __MODULE__)
 	end
 
   ## Server callbacks
@@ -51,5 +51,23 @@ endsnippet
 snippet t "Boilerplate for single test"
 test "${1:the truth}" do
 	assert 1 + 1 == 2$0
+end
+endsnippet
+
+snippet supervisor "Boilerplate for supervisor"
+defmodule ${1:ModuleName}.Supervisor do
+  use Supervisor
+
+  def start_link do
+    Supervisor.start_link(__MODULE__, :ok, name: __MODULE__)
+  end
+
+  def init(:ok) do
+    children = [
+      # worker($1.Worker, [], restart: :transient)
+    ]
+
+    supervise(children, strategy: :simple_one_for_one)
+  end
 end
 endsnippet

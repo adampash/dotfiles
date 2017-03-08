@@ -6,6 +6,9 @@ set shell=/bin/zsh
 " Turn off mouse clicking
 set mouse=""
 
+" Show line & column num in status
+set ruler
+
 " Save undo history
 set undofile
 set hidden
@@ -84,6 +87,8 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Linter: Execute code checks, find mistakes, in the background
   Plug 'w0rp/ale'
+  let g:ale_sign_warning = '⚠'
+  let g:ale_sign_error = '✋'
 
   " Friendly navigation
   Plug 'christoomey/vim-tmux-navigator'

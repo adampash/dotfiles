@@ -116,8 +116,16 @@ snip.rv = args_to_const(t[2])
 });
 endsnippet
 
-snippet log "console.log" b
-console.log($1);
+snippet cjs "console.log(JSON)" b
+console.log('$1', JSON.stringify(${1:variable}, null, 2));
+endsnippet
+
+snippet cl "console.log('string')" b
+console.log('$0');
+endsnippet
+
+snippet cv "console.log('var', var)" b
+console.log(\`$1\`, ${1:variable});
 endsnippet
 
 snippet fn "es6 function" b
