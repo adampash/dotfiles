@@ -4,6 +4,7 @@ alias gc "git commit"
 alias gl "git log"
 alias gb "git branch"
 alias gd "git diff"
+alias gpr "git pull-request"
 
 function g --wraps git
   if count $argv > /dev/null
