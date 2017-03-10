@@ -30,3 +30,10 @@ eval (direnv hook fish)
 eval (python -m virtualfish compat_aliases)
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[ -f /Users/aop/.nvm/versions/node/v4.3.2/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.fish ]; and . /Users/aop/.nvm/versions/node/v4.3.2/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.fish
+
+export GOPATH="$HOME/code/gopath/"
+set PATH $PATH $GOPATH/bin

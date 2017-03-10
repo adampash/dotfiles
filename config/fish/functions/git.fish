@@ -1,10 +1,11 @@
 # some nice git shortcuts
+alias git "hub"
 alias gc "git commit"
 alias gl "git log"
 alias gb "git branch"
 alias gd "git diff"
 
-function g
+function g --wraps git
   if count $argv > /dev/null
     git $argv
   else
@@ -25,7 +26,7 @@ function gh
     # set remote (git remote -v)
     if git remote -v | grep github.com
       echo "Opening github repo"
-      open (git remote -v | grep origin | grep fetch | awk '{print $2}' | sed 's/git@/http:\/\//' | sed 's/com:/com\//' | head -n1)
+      hub browse
     else
       new_github
     end
@@ -34,6 +35,11 @@ function gh
     git init
     new_github
   end
+end
+
+function watch_and_open
+  echo "Watching CI"
+  circle --watch; and gh
 end
 
 function new_github
