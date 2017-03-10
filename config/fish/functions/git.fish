@@ -38,6 +38,11 @@ function gh
   end
 end
 
+function pr_flow
+  echo "Pushing branch and creating PR"
+  git push; and git pull-request; and circle --watch; and gh
+end
+
 function watch_and_open
   echo "Watching CI"
   circle --watch; and gh
