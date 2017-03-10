@@ -37,3 +37,6 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 
 export GOPATH="$HOME/code/gopath/"
 set PATH $PATH $GOPATH/bin
+
+# Set rvm default as default ruby
+rvm default
