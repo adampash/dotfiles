@@ -46,7 +46,7 @@ set relativenumber
   " Format json
   map <leader>j :!cat % \| json_pp \| tee %<cr><cr>
   " Format javascript with prettier
-  map <leader>f gggqG<C-o><C-o>
+  map <leader>f gggqG<C-o>
   " Open scratch file
   map <leader>s :e scratch.exs<cr>
   " Run scratch file
@@ -157,6 +157,9 @@ call plug#begin('~/.config/nvim/plugged')
   " Restore cursor position
   Plug 'dietsche/vim-lastplace'
 
+  " Format on save
+  Plug 'sbdchd/neoformat'
+
 call plug#end()
 
 " Theme defaults
@@ -175,4 +178,4 @@ set shiftwidth=2
 
 
 " Javascript
-autocmd FileType javascript set formatprg=prettier\ --stdin
+autocmd FileType javascript set formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma
