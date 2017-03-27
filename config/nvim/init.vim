@@ -160,6 +160,12 @@ call plug#begin('~/.config/nvim/plugged')
   " Format on save
   Plug 'sbdchd/neoformat'
 
+  " Save vim sessions
+  Plug 'tpope/vim-obsession'
+
+  " Smart imports for JS modules
+  " Plug 'Galooshi/vim-import-js'
+
 call plug#end()
 
 " Theme defaults
@@ -178,4 +184,4 @@ set shiftwidth=2
 
 
 " Javascript
-autocmd FileType javascript set formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma
+autocmd FileType javascript set formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ es5
