@@ -8,7 +8,7 @@ source "$HOME/.config/fish/functions/git.fish"
 set -x EDITOR nvim
 
 function vi
-  nvim $argv
+  nvim -S $argv
 end
 
 # set -gx SSL_CERT_FILE /usr/local/heroku/data/cacert.pem
@@ -37,6 +37,8 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 
 export GOPATH="$HOME/code/gopath/"
 set PATH $PATH $GOPATH/bin
+# Set yarn bin
+set PATH $PATH (yarn global bin)
 
 # Set rvm default as default ruby
 rvm default
