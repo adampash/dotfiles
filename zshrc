@@ -91,6 +91,9 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 # set emscripten SDK path
 PATH=$PATH:$HOME/SDKs/emscripten/emsdk_portable
 
+# set yarn path
+PATH=$PATH:$(yarn global bin)
+
 
 # set newer git path
 PATH=/usr/local/git/bin:$PATH

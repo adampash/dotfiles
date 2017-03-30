@@ -46,7 +46,7 @@ set relativenumber
   " Format json
   map <leader>j :!cat % \| json_pp \| tee %<cr><cr>
   " Format javascript with prettier
-  map <leader>f gggqG<C-o>
+  map <leader>f gggqG<C-o><C-o>
   " Open scratch file
   map <leader>s :e scratch.exs<cr>
   " Run scratch file
@@ -184,4 +184,4 @@ set shiftwidth=2
 
 
 " Javascript
-autocmd FileType javascript set formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ es5
+autocmd FileType javascript set formatprg=./node_modules/.bin/prettier\ --stdin\ --single-quote\ --trailing-comma\ es5
