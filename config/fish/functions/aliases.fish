@@ -38,3 +38,7 @@ end
 function gawku
   command ssh gawku dokku $argv
 end
+
+function ci
+  circle $argv
+end
