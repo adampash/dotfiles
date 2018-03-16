@@ -20,7 +20,7 @@ bind-key -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
 
 # source '/Users/ap/dotfiles/powerline/powerline/bindings/tmux/powerline.conf'
 run-shell "powerline-daemon -q"
-source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
+source "/usr/local/lib/python3.6/site-packages/powerline/bindings/tmux/powerline.conf"
 
 
 # don't wait for an escape sequence after hitting
