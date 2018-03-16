@@ -1,1 +1,1 @@
-/Users/aop/.config/fisherman/z/functions/z.awk
+/Users/ap/.config/fisherman/z/functions/z.awk

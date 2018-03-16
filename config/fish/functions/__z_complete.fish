@@ -1,1 +1,1 @@
-/Users/aop/.config/fisherman/z/functions/__z_complete.fish
+/Users/ap/.config/fisherman/z/functions/__z_complete.fish

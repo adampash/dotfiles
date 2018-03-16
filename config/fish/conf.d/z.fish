@@ -1,1 +1,1 @@
-/Users/aop/.config/fisherman/z/conf.d/z.fish
+/Users/ap/.config/fisherman/z/conf.d/z.fish

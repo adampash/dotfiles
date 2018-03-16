@@ -1,1 +1,1 @@
-/Users/aop/.config/fisherman/nvm/nvm.fish
+/Users/ap/.config/fisherman/nvm/functions/nvm.fish

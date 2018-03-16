@@ -1,1 +1,1 @@
-/Users/aop/.config/fisherman/nvm/yarn.fish
+/Users/ap/.config/fisherman/nvm/functions/yarn.fish

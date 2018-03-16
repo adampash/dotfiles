@@ -1,1 +1,1 @@
-/Users/aop/.config/fisherman/functions/bass.fish
+/Users/ap/.config/fisherman/functions/bass.fish

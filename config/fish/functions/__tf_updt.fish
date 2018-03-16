@@ -1,0 +1,1 @@
+/Users/ap/.config/fisherman/thefuck/functions/__tf_updt.fish
