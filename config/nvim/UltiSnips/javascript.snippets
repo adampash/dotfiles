@@ -21,12 +21,12 @@ export default $1
 endsnippet
 
 snippet rp "Boilerplate for a pure React component" b
-import React, { Component } from 'react'
+import React from 'react'
 
-const ${1:ComponentName} = (props) => {
+const ${1:ComponentName} = (${2:props}) => {
 	$0
   return (
-    <div className="$1">
+    <div>
     { "$1 component" }
     </div>
   )
@@ -53,12 +53,14 @@ snip.rv = formatVariableName(t[1])
 ` from '${1}';$0
 endsnippet
 
-snippet test "Boilerplate for jest/jasmine tests" b
-import assert from 'assert';
+snippet test "Boilerplate for jest tests" b
+import ${1:functionName} from './${2:path}';
 
-describe('${1:functionName}', () => {
-	it('${2:tests truth}', () => {
-		assert.equal(true, true);$0
+describe('$1', () => {
+	it('${3:tests truth}', () => {
+    const args = "";
+    const expected = "";
+		expect($1(args)).toEqual(expected)
 	});
 });
 endsnippet
@@ -83,6 +85,9 @@ def camel_to_dash(name):
 	s1 = re.sub('(.)([A-Z][a-z]+)', r'\1-\2', name)
 	return re.sub('([a-z0-9])([A-Z])', r'\1-\2', s1).lower()
 
+def no_ext(name):
+  return ".".join(name.split(".")[0:-1])
+
 def args_to_const(args):
 	if args == '':
 		return ''
@@ -102,9 +107,9 @@ snip.rv = camel_to_dash(t[1])
 `.test.js
 import assert from 'assert';
 
-import $1 from '`!p
+import $1 from './`!p
 snip.rv = camel_to_dash(t[1])
-`.js';
+`';
 
 describe('$1', () => {
 	it('tests $1($2)', () => {
@@ -134,4 +139,6 @@ const ${1:fnName} = (${2:args}) => {
 }
 endsnippet
 
-
+snippet req "require()" b
+const ${1:requireName} = require('${2:$1}');
+endsnippet

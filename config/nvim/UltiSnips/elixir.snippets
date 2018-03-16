@@ -10,6 +10,10 @@ def ${1:name}(${2:opts}) do
 end
 endsnippet
 
+snippet db "Debugger" b
+require IEx; IEx.pry
+endsnippet
+
 snippet gs "Boilerplate for a GenServer" b
 defmodule ${1:ModuleName} do
 	use GenServer
@@ -30,10 +34,24 @@ end
 endsnippet
 
 
-snippet hc "Boilerplate for handle_call" b
+snippet call "Boilerplate for handle_call" b
 def handle_call(${1::message}, ${2:_from}, ${3:state}) do
 	$0
 	{:reply, state, state}
+end
+endsnippet
+
+snippet cast "Boilerplate for handle_info" b
+def handle_cast(${1::message}, ${2:state}) do
+	$0
+	{:noreply, state}
+end
+endsnippet
+
+snippet info "Boilerplate for handle_info" b
+def handle_info(${1::message}, ${2:state}) do
+	$0
+	{:noreply, state}
 end
 endsnippet
 
@@ -70,4 +88,10 @@ defmodule ${1:ModuleName}.Supervisor do
     supervise(children, strategy: :simple_one_for_one)
   end
 end
+endsnippet
+
+snippet md "moduledoc"
+@moduledoc """
+$0
+"""
 endsnippet

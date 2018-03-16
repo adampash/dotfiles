@@ -10,6 +10,7 @@ tmp/**/*
 !tmp/cache/.keep
 zeus.json
 *.un~
+scratch
 scratch.*
 yarn-error.log
 tags
@@ -32,3 +33,6 @@ tags
 Session.vim
 
 # End of https://www.gitignore.io/api/vim
+
+AP_NOTES.md
+.env.local

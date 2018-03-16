@@ -29,3 +29,5 @@
   email = adam.pash@gmail.com
 [github]
 	user = ap
+[credential]
+	helper = osxkeychain

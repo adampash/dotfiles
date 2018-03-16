@@ -3,3 +3,5 @@ tags
 tmp
 logs/
 yarn.lock
+dist
+__snapshots__
