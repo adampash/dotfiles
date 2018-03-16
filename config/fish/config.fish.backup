@@ -37,13 +37,12 @@ export GOPATH="$HOME/code/gopath/"
 set PATH $PATH $GOPATH/bin
 # Set yarn bin
 set PATH $PATH $HOME/.config/yarn/global/node_modules/.bin
-# Set rust bin
-export RUSTPATH="$HOME/.cargo/"
-set PATH $PATH $RUSTPATH/bin
-# Set yarn bin
 
 # Set rvm default as default ruby
 rvm default
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/aop/Downloads/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/Users/aop/Downloads/google-cloud-sdk/path.fish.inc'; else; . '/Users/aop/Downloads/google-cloud-sdk/path.fish.inc'; end; end
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -51,5 +50,3 @@ rvm default
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /Users/aop/code/postlight/internal/read/analytics/cloudwatch-to-lambda/node_modules/tabtab/.completions/sls.fish ]; and . /Users/aop/code/postlight/internal/read/analytics/cloudwatch-to-lambda/node_modules/tabtab/.completions/sls.fish
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/aop/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/Users/aop/google-cloud-sdk/path.fish.inc'; else; . '/Users/aop/google-cloud-sdk/path.fish.inc'; end; end

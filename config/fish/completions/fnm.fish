@@ -1,1 +1,0 @@
-/Users/aop/.config/fisherman/fnm/completions/fnm.fish
