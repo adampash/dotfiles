@@ -3,7 +3,7 @@ set fisher_config ~/.config/fisherman
 # source $fisher_home/config.fish
 source "$HOME/.config/fish/functions/git.fish"
 . "$HOME/.config/fish/functions/aliases.fish"
-. "$HOME/.config/fish/functions/fish_user_key_bindings.fish"
+# . "$HOME/.config/fish/functions/fish_user_key_bindings.fish"
 
 set -x EDITOR nvim
 set -U ERL_AFLAGS "-kernel shell_history enabled"
