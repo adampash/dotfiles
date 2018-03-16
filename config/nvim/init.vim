@@ -210,7 +210,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Rust fmt
   Plug 'rust-lang/rust.vim'
   " Smart imports for JS modules
-  " Plug 'Galooshi/vim-import-js'
+  Plug 'Galooshi/vim-import-js'
 
   " Graphql stuff
   Plug 'jparise/vim-graphql'
