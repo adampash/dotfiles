@@ -19,3 +19,4 @@ atom/*
 !atom/projects.cson
 !atom/styles.less
 npm-debug.log
+config/yarn/global/node_modules
