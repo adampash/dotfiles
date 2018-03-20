@@ -3,7 +3,7 @@ set fisher_config ~/.config/fisherman
 # source $fisher_home/config.fish
 source "$HOME/.config/fish/functions/git.fish"
 . "$HOME/.config/fish/functions/aliases.fish"
-# . "$HOME/.config/fish/functions/fish_user_key_bindings.fish"
+. "$HOME/.config/fish/functions/fish_user_key_bindings.fish"
 
 set -x EDITOR nvim
 set -U ERL_AFLAGS "-kernel shell_history enabled"
@@ -52,4 +52,4 @@ rvm default
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /Users/aop/code/postlight/internal/read/analytics/cloudwatch-to-lambda/node_modules/tabtab/.completions/sls.fish ]; and . /Users/aop/code/postlight/internal/read/analytics/cloudwatch-to-lambda/node_modules/tabtab/.completions/sls.fish
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/aop/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/Users/aop/google-cloud-sdk/path.fish.inc'; else; . '/Users/aop/google-cloud-sdk/path.fish.inc'; end; end
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc'; else; . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc'; end; end
