@@ -22,3 +22,4 @@ npm-debug.log
 config/yarn/global/node_modules
 config/fisherman/*
 config/gcloud
+config/thefuck
