@@ -39,7 +39,7 @@ set relativenumber
   nnoremap * *``
   " Indent file
   " map <leader>i ggVG=<c-o><c-o>
-  map <leader>i :call Format()<cr>
+  " map <leader>i :call Format()<cr>
   "Move around splits with <c-hjkl>
   nnoremap <c-j> <c-w>j
   nnoremap <c-k> <c-w>k
