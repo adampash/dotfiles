@@ -29,30 +29,24 @@ function gh
       echo "Opening github repo"
       hub browse
     else
-      new_github
+      echo "No matching remote"
     end
   else
-    echo "Initializing git repository"
-    git init
-    new_github
+    echo "No .git repo here; trying parent"
+    cd ..; and gh
   end
 end
 
-function pr_flow
+function pr-flow
   echo "Pushing branch and creating PR"
-  git push; and git pull-request; and watch_and_open
+  git push; and git pull-request; and watch-and-open
 end
 
-function watch_and_open
+function watch-and-open
   echo "Watching CI"
   if circle --watch
     gh
   else
     circle open
   end
-end
-
-function new_github
-  echo "Creating github repo"
-  hub create
 end

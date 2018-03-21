@@ -1,7 +1,10 @@
 {
   "dependencies": {
+    "gitignore": "^0.6.0",
     "import-js": "^2.10.1",
     "lerna": "^2.9.0",
-    "prettier": "^1.11.1"
+    "prettier": "^1.11.1",
+    "spotify-auth-cli": "^1.0.2",
+    "spotify-web-api-js": "^0.23.0"
   }
 }
