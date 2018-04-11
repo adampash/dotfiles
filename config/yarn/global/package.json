@@ -4,7 +4,10 @@
     "import-js": "^2.10.1",
     "lerna": "^2.9.0",
     "prettier": "^1.11.1",
-    "spotify-auth-cli": "^1.0.2",
-    "spotify-web-api-js": "^0.23.0"
+    "react-native-cli": "^2.0.1",
+    "serve": "^6.5.3",
+    "serverless": "^1.26.1",
+    "spotify-web-api-js": "^0.23.0",
+    "sqlite3": "^4.0.0"
   }
 }
