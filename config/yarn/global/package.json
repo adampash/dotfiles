@@ -1,13 +1,24 @@
 {
   "dependencies": {
+    "changelog-maker": "^2.2.7",
+    "create-react-app": "^2.1.1",
+    "diff-so-fancy": "^1.2.0",
     "gitignore": "^0.6.0",
+    "graphql-cli": "^2.17.0",
     "import-js": "^2.10.1",
+    "jest": "^23.6.0",
     "lerna": "^2.9.0",
+    "neovim": "^4.2.1",
     "prettier": "^1.11.1",
+    "prisma": "^1.22.0",
     "react-native-cli": "^2.0.1",
     "serve": "^6.5.3",
     "serverless": "^1.26.1",
+    "spot": "^0.2.0",
+    "spotify-control": "adampash/spotify-control",
     "spotify-web-api-js": "^0.23.0",
-    "sqlite3": "^4.0.0"
+    "sqlite3": "^4.0.0",
+    "twitter-ratios": "adampash/twitter-ratios",
+    "typescript": "^3.0.3"
   }
 }

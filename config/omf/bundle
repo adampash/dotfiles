@@ -1,2 +1,7 @@
-package aws
+package foreign-env
+package https://github.com/FabioAntunes/fish-nvm
+package nvm
+package pyenv
+package rvm
+package virtualfish
 theme default

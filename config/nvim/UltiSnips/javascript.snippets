@@ -35,6 +35,46 @@ const ${1:ComponentName} = (${2:props}) => {
 export default $1
 endsnippet
 
+snippet rct "Boilerplate for a basic React component in Typescript" b
+import * as React from 'react'
+
+interface Props {
+}
+
+interface State {
+}
+
+class ${1:ComponentName} extends React.Component<Props, State> {
+  state = {}
+
+  render() {
+		$0
+    return (
+      <div>
+        { "$1 component" }
+      </div>
+    )
+  }
+}
+
+export default $1
+endsnippet
+
+snippet rpt "Boilerplate for a pure React component in Typescript" b
+import * as React from 'react'
+
+interface Props {
+}
+
+const ${1:ComponentName} = (${2:props}: Props) =>
+  ($0
+    <div>
+    { "$1 component" }
+    </div>
+  )
+
+export default $1
+endsnippet
 snippet ii "magic import" b
 import `!p
 def formatName(name):

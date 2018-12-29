@@ -95,3 +95,15 @@ snippet md "moduledoc"
 $0
 """
 endsnippet
+
+snippet iv "Inspect var"
+IO.inspect(${1:var}, label: "$1")
+endsnippet
+
+snippet ip "Inspect pipe"
+IO.inspect(label: "${1:var}")
+endsnippet
+
+snippet p "puts"
+IO.puts(${1:string})
+endsnippet

@@ -1,13 +1,24 @@
+echo "Sourcing fish"
+
+# Key bindings
+fish_vi_key_bindings
+
+
+set -x PATH "/Users/ap/.pyenv/bin" $PATH
+status --is-interactive; and . (pyenv init -|psub)
+status --is-interactive; and . (pyenv virtualenv-init -|psub)
+# status --is-interactive; and . (pyenv shell fish)
+
 set fisher_home ~/.local/share/fisherman
 set fisher_config ~/.config/fisherman
-# source $fisher_home/config.fish
 source "$HOME/.config/fish/functions/git.fish"
 source "$HOME/.config/fish/functions/aliases.fish"
-source "$HOME/.config/fish/functions/fish_user_key_bindings.fish"
 
 set -x EDITOR nvim
 set -U ERL_AFLAGS "-kernel shell_history enabled"
 
+set PATH 'Users/ap/pyenv/shims' $PATH
+set PYENV_SHELL fish
 
 # set -gx SSL_CERT_FILE /usr/local/heroku/data/cacert.pem
 
@@ -15,23 +26,26 @@ set PATH $PATH /usr/local/nvm/versions/node/v4.2.1/bin /usr/local/bin /usr/bin /
 set PATH /usr/local/bin $PATH
 
 # rbenv ruby version manager
-status --is-interactive; and . (rbenv init -|psub)
+status --is-interactive
+and . (rbenv init -|psub)
 
 # nvm node version manager
-test -s /Users/ap/.nvm-fish/nvm.fish; and source /Users/ap/.nvm-fish/nvm.fish
-
-# kiex elixir version manager
-test -s "$HOME/.kiex/scripts/kiex"; and bass source "$HOME/.kiex/scripts/kiex"
+test -s /Users/ap/.nvm-fish/nvm.fish
+and source /Users/ap/.nvm-fish/nvm.fish
 
 eval (direnv hook fish)
 
-eval (python -m virtualfish compat_aliases)
+eval (python -m virtualfish)
 
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+# eval (python -m virtualfish compat_aliases)
+
+# test -e {$HOME}/.iterm2_shell_integration.fish
+# and source {$HOME}/.iterm2_shell_integration.fish
 
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`
-[ -f /Users/aop/.nvm/versions/node/v4.3.2/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.fish ]; and . /Users/aop/.nvm/versions/node/v4.3.2/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.fish
+# [ -f /Users/aop/.nvm/versions/node/v4.3.2/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.fish ]
+# and . /Users/aop/.nvm/versions/node/v4.3.2/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.fish
 
 export GOPATH="$HOME/code/gopath/"
 set PATH $PATH $GOPATH/bin
@@ -43,13 +57,22 @@ set PATH $PATH $RUSTPATH/bin
 # Set yarn bin
 
 # Set rvm default as default ruby
-rvm default
+# rvm default
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/aop/code/postlight/internal/read/analytics/cloudwatch-to-lambda/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/aop/code/postlight/internal/read/analytics/cloudwatch-to-lambda/node_modules/tabtab/.completions/serverless.fish
+[ -f /Users/aop/code/postlight/internal/read/analytics/cloudwatch-to-lambda/node_modules/tabtab/.completions/serverless.fish ]
+and . /Users/aop/code/postlight/internal/read/analytics/cloudwatch-to-lambda/node_modules/tabtab/.completions/serverless.fish
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/aop/code/postlight/internal/read/analytics/cloudwatch-to-lambda/node_modules/tabtab/.completions/sls.fish ]; and . /Users/aop/code/postlight/internal/read/analytics/cloudwatch-to-lambda/node_modules/tabtab/.completions/sls.fish
+[ -f /Users/aop/code/postlight/internal/read/analytics/cloudwatch-to-lambda/node_modules/tabtab/.completions/sls.fish ]
+and . /Users/aop/code/postlight/internal/read/analytics/cloudwatch-to-lambda/node_modules/tabtab/.completions/sls.fish
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc' ]; if type source > /dev/null; source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc'; else; . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc'; end; end
+# if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc' ]
+#     if type source >/dev/null
+#         source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc'
+#     else
+#         . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc'
+#     end
+# end
+source ~/.asdf/asdf.fish

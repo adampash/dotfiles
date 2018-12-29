@@ -98,6 +98,8 @@ call plug#begin('~/.config/nvim/plugged')
     " use tab for completion
     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+  Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+
   " Polyglot loads language support on demand!
   Plug 'sheerun/vim-polyglot'
 
@@ -149,6 +151,8 @@ call plug#begin('~/.config/nvim/plugged')
   " Tags
   Plug 'ludovicchabant/vim-gutentags'
     let g:gutentags_cache_dir = '~/.tags_cache'
+    " Disable on git commit
+    au FileType gitcommit,gitrebase,vim let g:gutentags_enabled=0
 
   " Vim surround
   Plug 'tpope/vim-surround'
@@ -215,6 +219,14 @@ call plug#begin('~/.config/nvim/plugged')
   " Graphql stuff
   Plug 'jparise/vim-graphql'
 
+  " TypeScript stuff
+  " Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+ " For Denite features
+  Plug 'Shougo/denite.nvim'
+
+  " For expanding selection
+  Plug 'terryma/vim-expand-region'
 call plug#end()
 
 " Theme defaults
@@ -254,3 +266,9 @@ function! Format()
   "   normal! ggVG=<c-o><c-o>
   " endif
 endfunction
+
+
+let g:python_host_prog = '/Users/ap/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/ap/.pyenv/versions/neovim3/bin/python'
+
+
